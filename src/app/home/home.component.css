@@ -1,0 +1,35 @@
+*{
+    background-image: url(../../assets/images/Screen_Background/Level_screen_backgroung_min.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 90%;
+    
+}
+
+.devloperImg{
+    margin: 8% auto auto 10%;
+}
+
+.levels{
+    margin: 6.5% auto auto 9%;
+    
+}
+
+.anima{
+    animation-name: train;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate-reverse; */
+}
+
+@keyframes train{
+    from{
+        /* margin-left: 0px;  */
+        margin-top: 0px;
+    }
+
+    to{
+        /* margin-left: 5px;  */
+        margin-top: 8px;
+    }
+}
