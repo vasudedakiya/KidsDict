@@ -1,42 +1,43 @@
 <div class="bg"><br>
 
     <audio autoplay loop>
-        <source src="../../assets/sound/Sound effect/common_song.mp3" type="audio/mp3">
+        <source src="../../assets/sound/Sound effect/dashboard_sound.ogg" type="audio/ogg">
     </audio>
 
-    <div class="scrollmenu">
-        <!-- <i class="fas fa-chevron-left fa-3x arrow"></i> -->
-        <a>
+
+    <div class="scrollmenu" id="scrollmenua">
+        <a (click)="goCate(1)">
             <img src="../../assets/images/Category/Alphabets.webp" class="cate" alt="">
         </a>
-        <a>
+        <a (click)="goCate(2)">
             <img src="../../assets/images/Category/Birds.webp" class="cate" alt="">
         </a>
-        <a>
+        <a (click)="goCate(3)">
             <img src="../../assets/images/Category/BodyParts.webp" class="cate" alt="">
         </a>
-        <a>
+        <a (click)="goCate(4)">
             <img src="../../assets/images/Category/Colors.webp" class="cate" alt="">
         </a>
-        <a>
+        <a (click)="goCate(5)">
             <img src="../../assets/images/Category/Days.webp" class="cate" alt="">
         </a>
-        <a>
+        <a (click)="goCate(6)">
             <img src="../../assets/images/Category/DomesticAnimals.webp" class="cate" alt="">
         </a>
-        <a>
+        <a (click)="goCate(7)">
             <img src="../../assets/images/Category/Flowers.webp" class="cate" alt="">
         </a>
-        <a>
+        <a (click)="goCate(8)">
             <img src="../../assets/images/Category/WildAnimals.webp" class="cate" alt="">
         </a>
 
-        <!-- <i class="fas fa-chevron-right fa-3x arrow"></i> -->
     </div>
 
-    <div class="back">
+
+    <div class="back" (click)="goBack()">
         <img src="../../assets/images/Levels_and_Other_Buttons/Back button.webp" height="60px" alt="" srcset="">
     </div>
-    <br>
+
+    <br><br>
 
 </div>

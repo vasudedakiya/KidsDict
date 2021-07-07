@@ -1,9 +1,8 @@
-.bg{
-    background-image: url(../../assets/images/Screen_Background/Level-4-screen-background.webp);
+.bg {
+    background-image: url(../../assets/images/Screen_Background/Categories-Screen-background.webp);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 90%;
-  
 }
 
 div.scrollmenu {
@@ -13,50 +12,46 @@ div.scrollmenu {
     white-space: nowrap;
 }
 
-div.scrollmenu::-webkit-scrollbar{
+div.scrollmenu::-webkit-scrollbar {
     display: none;
 }
 
 div.scrollmenu {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
 div.scrollmenu a {
     display: inline-block;
     text-align: center;
     padding: 14px;
     text-decoration: none;
 }
-  
-div.scrollmenu a:hover {
 
-}
-
-.cate{
+.cate {
     height: 200px;
-    
 }
 
-@keyframes run{
-    0%{
+@keyframes run {
+    0% {
         transform: rotate(0deg);
     }
-    50%{
+    50% {
         transform: rotate(8deg);
     }
-    100%{
+    100% {
         transform: rotate(-8deg);
     }
 }
 
-.cate:hover{
+.cate:hover {
     animation-name: run;
     animation-duration: 1s;
     animation-iteration-count: infinite;
-   
-} 
+}
 
-.back{
-    margin:2% auto auto .8%;
+.back {
+    margin: 2.5% auto auto .8%;
 }
