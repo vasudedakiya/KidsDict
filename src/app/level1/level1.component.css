@@ -72,3 +72,21 @@ ul#main li {
 .back {
     margin: 0px auto auto .8%;
 }
+
+@keyframes runer {
+    0% {
+        background-size: 50px 50px;
+    }
+    50% {
+        background-size: 45px 45px;
+    }
+    100% {
+        background-size: 47px 47px;
+    }
+}
+
+spell:hover {
+    animation-name: runer;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
