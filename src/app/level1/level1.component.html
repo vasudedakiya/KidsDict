@@ -3,28 +3,41 @@
     <br>
     <div id="centerDiv">
         <ul id="main">
-            <li>
-                <div class="spell" style="background-image: url({{temp1}});">A</div>
-            </li>
-            <li>
-                <div class="spell" style="background-image: url({{temp2}});">P</div>
-            </li>
-            <li>
-                <div class="spell" style="background-image: url({{temp3}});">P</div>
-            </li>
-            <li>
-                <div class="spell" style="background-image: url({{temp4}});">L</div>
-            </li>
-            <li>
-                <div class="spell" style="background-image: url({{temp5}});">E</div>
+            <li *ngFor="let t of data">
+                <div class="spell" *ngIf="t.latter !== 'l' && t.latter !== 'i' && t.latter !== 'j'; else elseBlock"
+                    style="background-image: url({{t.url}});">
+                    <span class="txt">{{t.latter}}&nbsp;</span>
+                </div>
+
+                <ng-template #elseBlock>
+                    <div class="spell" style="background-image: url({{t.url}});">
+                        <span class="txts">{{t.latter}}&nbsp;</span>
+                    </div>
+                </ng-template>
             </li>
         </ul>
     </div>
 
-
-
     <div>
-        <img src="../../assets/images/Alphabets/A.webp" class="rounded mx-auto d-block imgs" alt="">
+
+        <div class="il" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left isw"></i>
+        </div>
+        <ng-template #elsePrev>
+            <div class="il" (click)="prev()"><i class="fas fa-chevron-left is"></i>
+            </div>
+        </ng-template>
+
+        <div class="">
+            <img src="{{imgurl}}" class="img img-fluid rounded mx-auto d-block imgs" alt="">
+        </div>
+
+        <div class="ir" *ngIf="index === (demo?.length - 1); else elseNext"><i class="fas fa-chevron-right isw"></i>
+        </div>
+        <ng-template #elseNext>
+            <div class="ir" (click)="next()"><i class="fas fa-chevron-right is"></i>
+            </div>
+        </ng-template>
+
     </div>
 
 

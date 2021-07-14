@@ -1,32 +1,72 @@
 .bg {
     background-image: url(../../assets/images/Screen_Background/Level-1-screen-background.webp);
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 90%;
+    background-size: 100% 97%;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 
 .spell {
-    background-size: 46px;
+    background-size: 47px 47px;
     background-repeat: no-repeat;
+    align-items: center;
+    margin: auto 3px auto 3px;
     font-size: 35px;
-    padding-left: 12px;
-    padding-right: 20px;
     display: inline;
+}
+
+.txt {
+    font-size: larger;
     text-align: center;
+    padding-left: 12px;
+    padding-right: 10px;
+}
+
+.txts {
+    font-size: larger;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 10px;
 }
 
 div#centerDiv {
     width: 100%;
     text-align: center;
+    margin-left: -2%;
 }
 
 ul#main li {
     display: inline;
 }
 
+.is {
+    color: greenyellow;
+    font-size: 150px;
+}
+
+.isw {
+    color: rgb(171, 173, 10);
+    font-size: 150px;
+}
+
+.il {
+    float: left;
+    margin-top: 8%;
+    margin-left: 2%;
+    margin-right: -10%;
+}
+
+.ir {
+    float: right;
+    margin-top: -21%;
+    margin-right: 2%;
+}
+
 .imgs {
     height: 325px;
     margin-top: 50px;
+    width: auto;
+    float: inline-end;
 }
 
 .back {

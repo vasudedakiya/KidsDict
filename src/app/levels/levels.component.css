@@ -1,13 +1,14 @@
 .bg {
     background-image: url(../../assets/images/Screen_Background/Categories-Screen-background.webp);
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 90%;
+    background-size: 100% 97%;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 
 div.scrollmenu {
     -ms-overflow-style: none;
-    margin: 13% 14% auto 14%;
+    margin: 8% 14% auto 14%;
     overflow: auto;
     white-space: nowrap;
 }
@@ -18,9 +19,7 @@ div.scrollmenu::-webkit-scrollbar {
 
 div.scrollmenu {
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
 }
 
 div.scrollmenu a {
@@ -31,7 +30,7 @@ div.scrollmenu a {
 }
 
 .cate {
-    height: 200px;
+    height: 170px;
 }
 
 @keyframes run {
@@ -53,5 +52,9 @@ div.scrollmenu a {
 }
 
 .back {
-    margin: 2.5% auto auto .8%;
+    margin: 1.5% 0px 0px .8%;
+}
+
+.cattxt {
+    margin: 2% auto auto 20%;
 }
