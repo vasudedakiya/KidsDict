@@ -75,17 +75,20 @@ ul#main li {
 
 @keyframes runer {
     0% {
-        background-size: 50px 50px;
+        opacity: 1;
+    }
+    25% {
+        opacity: .4;
     }
     50% {
-        background-size: 45px 45px;
+        opacity: 1;
     }
     100% {
-        background-size: 47px 47px;
+        opacity: .4;
     }
 }
 
-spell:hover {
+.anima {
     animation-name: runer;
     animation-duration: 1s;
     animation-iteration-count: 1;

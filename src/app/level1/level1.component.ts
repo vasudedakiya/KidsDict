@@ -15,6 +15,7 @@ export class Level1Component implements OnInit {
   text: string[];
   voices: SpeechSynthesisVoice[];
   word: string;
+  count = 0;
 
 
   constructor(private _route: Router) {
@@ -52,8 +53,8 @@ export class Level1Component implements OnInit {
         }
       );
     }
-
     this.speak();
+    // this.playAnima();
     // ---------------------------------------
   }
 
@@ -75,10 +76,21 @@ export class Level1Component implements OnInit {
         latter: this.demo[this.index].latter[i],
       }
       this.data.push(temp);
+
     }
     this.imgurl = this.demo[this.index].url;
     this.text = this.demo[this.index].latter;
     this.word = (this.demo[this.index].name);
+  }
+
+  playAnima(late: any) {
+    var d: HTMLElement | null = document.getElementById("wave" + late + this.count);
+
+    if (d != null) {
+      d.classList.add('anima');
+    }
+
+
   }
   // ========================================================================
 
@@ -97,12 +109,19 @@ export class Level1Component implements OnInit {
   }
 
   synthesizeSpeechFromText(voice: SpeechSynthesisVoice, rate: number, text: string[], word: string) {
+    this.count = 0;
     for (let i = 0; i < this.demo[this.index].latter.length; i++) {
+      setTimeout(() => {
+        this.count++
+        this.playAnima(text[i]);
+      }, i * 1300);
 
       var utterance = new SpeechSynthesisUtterance(text[i]);
       utterance.voice = this.selectedVoice;
       utterance.rate = rate;
       speechSynthesis.speak(utterance);
+
+
 
     }
     var utterance = new SpeechSynthesisUtterance(word);
