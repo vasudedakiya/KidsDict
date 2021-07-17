@@ -21,7 +21,7 @@
 
     <div>
 
-        <div class="il" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left isw"></i>
+        <div class="il" *ngIf="index === 0; else elsePrev">
         </div>
         <ng-template #elsePrev>
             <div class="il" (click)="changeSlid(-1)"><i class="fas fa-chevron-left is"></i>
@@ -32,7 +32,7 @@
             <img src="{{imgurl}}" class="img img-fluid rounded mx-auto d-block imgs" alt="">
         </div>
 
-        <div class="ir" *ngIf="index === (demo.length - 1); else elseNext"><i class="fas fa-chevron-right isw"></i>
+        <div class="ir" *ngIf="index === (demo.length - 1); else elseNext">
         </div>
         <ng-template #elseNext>
             <div class="ir" (click)="changeSlid(1)"><i class="fas fa-chevron-right is"></i>

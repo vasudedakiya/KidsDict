@@ -1,0 +1,83 @@
+.bg {
+    background-image: url(../../assets/images/Screen_Background/Level-2-background.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 97%;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.back {
+    margin: -50px auto auto -5px;
+}
+
+div#centerDiv {
+    width: 100%;
+    text-align: center;
+    margin-left: -2%;
+}
+
+ul#main li {
+    display: inline;
+}
+
+.spell {
+    background-size: 47px 47px;
+    background-repeat: no-repeat;
+    align-items: center;
+    margin: auto 3px auto 3px;
+    font-size: 35px;
+    display: inline;
+}
+
+.txt {
+    font-size: larger;
+    text-align: center;
+    padding-left: 12px;
+    padding-right: 10px;
+}
+
+.txts {
+    font-size: larger;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.underl {
+    border-bottom: 2px solid white;
+}
+
+.il {
+    float: left;
+    margin-left: 2%;
+    margin-right: -10%;
+}
+
+.ir {
+    float: right;
+    margin-right: 2%;
+}
+
+.is {
+    color: greenyellow;
+    font-size: 150px;
+}
+
+.isw {
+    color: rgb(171, 173, 10);
+    font-size: 150px;
+}
+
+.kbhh {
+    margin-top: 55%;
+}
+
+.kbmr {
+    width: 90px;
+    height: 60px;
+}
+
+.kblr {
+    width: 100px;
+    height: 50px;
+}

@@ -78,13 +78,16 @@ ul#main li {
         opacity: 1;
     }
     25% {
-        opacity: .4;
+        opacity: .5
     }
     50% {
         opacity: 1;
     }
+    75% {
+        opacity: .5;
+    }
     100% {
-        opacity: .4;
+        opacity: 1;
     }
 }
 
