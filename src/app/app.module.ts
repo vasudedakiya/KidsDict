@@ -9,6 +9,7 @@ import { Level1Component } from './level1/level1.component';
 import { Level2Component } from './level2/level2.component';
 import { Level3Component } from './level3/level3.component';
 import { Level4Component } from './level4/level4.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Level4Component } from './level4/level4.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

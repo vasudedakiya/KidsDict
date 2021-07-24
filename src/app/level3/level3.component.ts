@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiKidsDictService } from '../api-kids-dict.service';
 
 @Component({
   selector: 'app-level3',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Level3Component implements OnInit {
 
-  constructor() { }
+  constructor(private _api: ApiKidsDictService) { }
 
   ngOnInit(): void {
+    this._api.getCategoryList().subscribe(
+      (res: any) => {
+        console.log(res)
+      }
+    )
   }
 
 }
