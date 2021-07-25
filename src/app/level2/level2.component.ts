@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiKidsDictService } from '../api-kids-dict.service';
 
 @Component({
   selector: 'app-level2',
@@ -8,14 +9,9 @@ import { Router } from '@angular/router';
 })
 export class Level2Component implements OnInit {
 
-  constructor(private _route: Router) { }
+  constructor(private _route: Router, private _api: ApiKidsDictService, private _activeRoute: ActivatedRoute) { }
 
-  demo: { name: string, latter: any, url: string }[] = [
-    { name: "apple", latter: "apple".split(''), url: "../../assets/images/Alphabets/A.webp" },
-    { name: "ball", latter: "ball".split(''), url: "../../assets/images/Alphabets/B.webp" },
-    { name: "cat", latter: "cat".split(''), url: "../../assets/images/Alphabets/C.webp" },
-    { name: "dog", latter: "dog".split(''), url: "../../assets/images/Alphabets/D.webp" },
-  ]
+  demo: { name: string, latter: any, url: string }[] = []
 
 
   index: number = 0;
@@ -23,8 +19,27 @@ export class Level2Component implements OnInit {
   data: { url: string, latter: string }[] = []
   ansData: { url: string, latter: string }[] = []
   count1: number = 0;
+  id: number = 0;
+  dataLoad = true;
 
   ngOnInit(): void {
+    this.id = this._activeRoute.snapshot.params.id;
+
+    this._api.getCatData(this.id).subscribe((res: any) => {
+      for (let i = 0; i < res.data.length; i++) {
+        var temp1 = res.data[i].name;
+        var temp = { name: res.data[i].name, latter: temp1.split(''), url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img };
+        this.demo.push(temp);
+      }
+      this.dataLoad = false;
+      this.dataS();
+
+    });
+
+
+  }
+
+  dataS() {
     this.displaydata();
   }
 
@@ -37,10 +52,11 @@ export class Level2Component implements OnInit {
     this.data = [];
     this.ansData = [];
     this.count1 = 0;
-    this.ngOnInit();
+    this.dataS();
   }
 
   displaydata() {
+
     for (let i = 0; i < this.demo[this.index].latter.length; i++) {
       let temp = {
         url: "../../assets/images/Spelling_Button/SpelingButton" + (i + 1) + ".webp",
@@ -53,8 +69,29 @@ export class Level2Component implements OnInit {
     this.imgurl = this.demo[this.index].url;
   }
 
+  goHome() {
+    this._route.navigate([''])
+  }
+
+  help() {
+    var d: HTMLElement | null = document.getElementById(this.demo[this.index].latter[this.count1].toLocaleLowerCase());
+
+    if (d != null) {
+      d?.classList.add('anima');
+    }
+
+    setTimeout(() => {
+      d?.classList.remove('anima')
+    }, 1000);
+
+    this.demo[this.index].latter[this.count1].toLocaleLowerCase()
+
+  }
+
   appendLatter(lat: string) {
+
     if (lat === 'Backspace' && this.count1 !== 0) {
+
       let temp1 = {
         url: "../../assets/images/Spelling_Button/SpelingButton" + (this.count1) + ".webp",
         latter: this.demo[this.index].latter[this.count1 - 1]
@@ -70,15 +107,20 @@ export class Level2Component implements OnInit {
     }
 
 
-    else if (this.count1 < this.demo[this.index].latter.length && lat === this.demo[this.index].latter[this.count1]) {
+    else if (this.count1 < this.demo[this.index].latter.length && lat === this.demo[this.index].latter[this.count1].toLocaleLowerCase()) {
+
       let temp1 = {
         url: "../../assets/images/Spelling_Button/SpelingButton" + (this.count1 + 1) + ".webp",
-        latter: lat
+        latter: this.demo[this.index].latter[this.count1]
       }
       this.ansData[this.count1] = temp1;
 
       let temp = { url: "", latter: '\xa0\xa0' }
       this.data[this.count1] = temp;
+      let audio = new Audio();
+      audio.src = "../../assets/sound/Sound effect/sound_keyboard_right.ogg";
+      audio.load();
+      audio.play();
 
       this.count1 += 1
       if (this.count1 == this.demo[this.index].latter.length) {
@@ -86,6 +128,13 @@ export class Level2Component implements OnInit {
           this.changeSlid(1);
         }, 500);
       }
+    }
+
+    else {
+      let audio = new Audio();
+      audio.src = "../../assets/sound/Sound effect/sound_keyboard_wrong.ogg";
+      audio.load();
+      audio.play();
     }
 
   }

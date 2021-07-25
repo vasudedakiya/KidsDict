@@ -81,3 +81,31 @@ ul#main li {
     width: 100px;
     height: 50px;
 }
+
+.loader {
+    margin-top: 14%;
+}
+
+.anima {
+    animation-name: runer;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes runer {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: .5
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

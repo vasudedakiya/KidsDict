@@ -96,3 +96,8 @@ ul#main li {
     animation-duration: 1s;
     animation-iteration-count: 1;
 }
+
+.loader {
+    margin-top: 18.5%;
+    margin-bottom: 18.5%;
+}

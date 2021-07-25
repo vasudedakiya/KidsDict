@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiKidsDictService } from '../api-kids-dict.service';
 
 @Component({
   selector: 'app-level1',
@@ -16,9 +17,11 @@ export class Level1Component implements OnInit {
   voices: SpeechSynthesisVoice[];
   word: string;
   count = 0;
+  id: number = 0;
+  dataLoad = true;
 
 
-  constructor(private _route: Router) {
+  constructor(private _route: Router, private _activeRoute: ActivatedRoute, private _api: ApiKidsDictService) {
     this.voices = [];
     this.selectedVoice = null;
     this.selectedRate = .75;
@@ -28,34 +31,37 @@ export class Level1Component implements OnInit {
 
   // ----------------------------------------------------------
 
-
-  demo: { name: string, latter: any, url: string }[] = [
-    { name: "apple", latter: "apple".split(''), url: "../../assets/images/Alphabets/A.webp" },
-    { name: "ball", latter: "ball".split(''), url: "../../assets/images/Alphabets/B.webp" },
-    { name: "cat", latter: "cat".split(''), url: "../../assets/images/Alphabets/C.webp" },
-    { name: "dog", latter: "dog".split(''), url: "../../assets/images/Alphabets/D.webp" },
-  ]
-
+  demo: { name: string, latter: any, url: string }[] = []
   index: number = 0;
   imgurl: string = ""
   data: { url: string, latter: string }[] = []
 
   ngOnInit(): void {
-    this.displaydata();
-    //  ----------------sound---------------
-    if (!this.voices.length) {
+    this.id = this._activeRoute.snapshot.params.id
 
-      speechSynthesis.addEventListener(
-        "voiceschanged",
-        () => {
-          this.voices = speechSynthesis.getVoices();
-          this.selectedVoice = (this.voices[2]);
-        }
-      );
-    }
+    speechSynthesis.addEventListener(
+      "voiceschanged",
+      () => {
+        this.voices = speechSynthesis.getVoices();
+        this.selectedVoice = (this.voices[4]);
+      }
+    );
+
+    this._api.getCatData(this.id).subscribe((res: any) => {
+      for (let i = 0; i < res.data.length; i++) {
+        var temp1 = res.data[i].name;
+        var temp = { name: res.data[i].name, latter: temp1.split(''), url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img }
+        this.demo.push(temp);
+      }
+      this.dataLoad = false;
+      this.dataSD();
+    });
+
+  }
+
+  dataSD() {
+    this.displaydata();
     this.speak();
-    // this.playAnima();
-    // ---------------------------------------
   }
 
   // ============================display data methods=====================
@@ -66,7 +72,7 @@ export class Level1Component implements OnInit {
   changeSlid(id: any) {
     this.index = this.index + id;
     this.data = [];
-    this.ngOnInit();
+    this.dataSD();
   }
 
   displaydata() {
@@ -76,7 +82,6 @@ export class Level1Component implements OnInit {
         latter: this.demo[this.index].latter[i],
       }
       this.data.push(temp);
-
     }
     this.imgurl = this.demo[this.index].url;
     this.text = this.demo[this.index].latter;
@@ -85,19 +90,15 @@ export class Level1Component implements OnInit {
 
   playAnima(late: any) {
     var d: HTMLElement | null = document.getElementById("wave" + late + this.count);
-
     if (d != null) {
       d.classList.add('anima');
     }
-
-
   }
-  // ========================================================================
 
 
   // -----------------------sound methods---------------------
   speak() {
-    this.selectedVoice = this.voices[2];
+    this.selectedVoice = this.voices[4];
     this.stop();
     this.synthesizeSpeechFromText(this.selectedVoice, this.selectedRate, this.text, this.word);
   }
@@ -120,9 +121,6 @@ export class Level1Component implements OnInit {
       utterance.voice = this.selectedVoice;
       utterance.rate = rate;
       speechSynthesis.speak(utterance);
-
-
-
     }
     var utterance = new SpeechSynthesisUtterance(word);
     utterance.voice = this.selectedVoice;
@@ -130,5 +128,4 @@ export class Level1Component implements OnInit {
     speechSynthesis.speak(utterance);
   }
 
-  // ----------------------------------------------------
 }

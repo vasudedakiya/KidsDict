@@ -10,8 +10,26 @@
     </div>
 
 
+    <div class="d-flex justify-content-center loader" *ngIf="dataLoad === true">
+        <div class="spinner-border" role="status">
+        </div>
+        <b> &nbsp; &nbsp; Loding data...</b>
+    </div>
+
 
     <div class="scrollmenu " id="scrollmenua">
+
+        <a (click)="goCate(c.id)" *ngFor="let c of categorys">
+            <img src="https://kidsdictionary.arjunbala.com/{{c.img}}" class="cate" alt="">
+        </a>
+
+    </div>
+
+
+    <!-- For Offline Work -->
+
+
+    <!-- <div class="scrollmenu " id="scrollmenua">
         <a (click)="goCate(1)">
             <img src="../../assets/images/Category/Alphabets.webp" class="cate" alt="">
         </a>
@@ -36,8 +54,11 @@
         <a (click)="goCate(8)">
             <img src="../../assets/images/Category/WildAnimals.webp" class="cate" alt="">
         </a>
+    </div> -->
 
-    </div>
+
+
+    <!-- ---------------------- -->
 
 
     <div class="back" (click)="goBack()">

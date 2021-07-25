@@ -27,7 +27,19 @@ export class ApiKidsDictService {
     };
 
     return this._http.get(this.apiUrlCate, httpOptions)
+  }
 
+  getCatData(id: any) {
+    var headers_object = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + this.bearerToken
+    });
+
+    const httpOptions = {
+      headers: headers_object
+    };
+
+    return this._http.get(this.apiUrlCateData + id, httpOptions)
   }
 
 

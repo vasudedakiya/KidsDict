@@ -11,11 +11,6 @@ export class Level3Component implements OnInit {
   constructor(private _api: ApiKidsDictService) { }
 
   ngOnInit(): void {
-    this._api.getCategoryList().subscribe(
-      (res: any) => {
-        console.log(res)
-      }
-    )
   }
 
 }

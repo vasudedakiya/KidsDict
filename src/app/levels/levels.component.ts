@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ApiKidsDictService } from '../api-kids-dict.service';
 
 @Component({
   selector: 'app-levels',
@@ -9,10 +10,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LevelsComponent implements OnInit {
 
   id: number = 0;
-  constructor(private _router: Router, private _activeRoute: ActivatedRoute) { }
+  categorys: any;
+  dataLoad = true;
+  constructor(private _router: Router, private _activeRoute: ActivatedRoute, private _api: ApiKidsDictService) { }
 
   ngOnInit(): void {
     this.id = this._activeRoute.snapshot.params.id
+
+    this._api.getCategoryList().subscribe((res: any) => {
+      this.categorys = res.data;
+      this.dataLoad = false;
+    })
+
   }
 
   goCate(cat: any) {
