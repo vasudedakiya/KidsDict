@@ -1,0 +1,42 @@
+.bg {
+    background-image: url(../../assets/images/Screen_Background/Level-3-screen-background.webp);
+    background-repeat: no-repeat;
+    background-size: 100% 97%;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.is {
+    color: greenyellow;
+    font-size: 150px;
+}
+
+.slidbtn {
+    margin-top: 15%;
+}
+
+.imgmid {
+    margin-left: 40px;
+}
+
+.optios {
+    background-size: 300px 60px;
+    background-repeat: no-repeat;
+    align-items: center;
+    font-size: 35px;
+    display: inline;
+}
+
+.spell {
+    margin-left: 25%;
+}
+
+.back {
+    margin-top: -2%;
+    margin-left: -.5%;
+}
+
+.smily {
+    padding-top: 5%;
+    padding-left: 30%;
+}

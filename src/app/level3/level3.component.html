@@ -1,1 +1,83 @@
-<p>level3 works!</p>
+<div class="bg">
+
+    <div class="row pt-4">
+
+        <div class="col-md-1 ml-1 slidbtn">
+            <div class="il" *ngIf="index === 0; else elsePrev">
+            </div>
+            <ng-template #elsePrev>
+                <div class="il" (click)="changeSlid(-1)"><i class="fas fa-chevron-left is"></i>
+                </div>
+            </ng-template>
+        </div>
+
+        <div class="col-md-3">
+            <div>
+                <img src="../../assets/images/Smile/Level-3-Happy face.webp" height="200px" alt="" srcset="">
+            </div>
+        </div>
+
+        <div class="col-md-3 imgmid">
+            <div class="">
+                <img src="{{imgurl}}" class="img img-fluid rounded mx-auto d-block" alt="">
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="smily">
+                <img src="../../assets/images/Smile/Level-3-Sad face.webp" height="200px" alt="" srcset="">
+            </div>
+        </div>
+
+        <div class="col-md-1 ml-3 slidbtn">
+            <div class="ir" *ngIf="index === (demo.length - 1); else elseNext">
+            </div>
+            <ng-template #elseNext>
+                <div class="ir" (click)="changeSlid(1)"><i class="fas fa-chevron-right is"></i></div>
+            </ng-template>
+        </div>
+    </div>
+
+
+    <div>
+
+        <div class="row">
+
+            <div class="col-md-2"> </div>
+
+            <div class="col-md-4 ml-4 optios" (click)="optioSelect(0)"
+                style="background-image: url(../../assets/images/MCQ_Buttons/MCQ\ button-A.webp);">
+                <span class="spell">{{spellings[0]}}</span>
+            </div>
+
+            <div class="col-md-4 optios" (click)="optioSelect(1)"
+                style="background-image: url(../../assets/images/MCQ_Buttons/MCQ\ button-B.webp);">
+                <span class="spell">{{spellings[1]}}</span>
+            </div>
+            <div class="col-md-1"> </div>
+        </div>
+
+        <div class="row mt-4">
+
+            <div class="col-md-2"> </div>
+
+            <div class="col-md-4 ml-4 optios" (click)="optioSelect(2)"
+                style="background-image: url(../../assets/images/MCQ_Buttons/MCQ\ button-C.webp);">
+                <span class="spell">{{spellings[2]}}</span>
+            </div>
+
+            <div class="col-md-4 optios" (click)="optioSelect(3)"
+                style="background-image: url(../../assets/images/MCQ_Buttons/MCQ\ button-D.webp);">
+                <span class="spell">{{spellings[3]}}</span>
+            </div>
+            <div class="col-md-1"> </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-1 back" (click)="goBack()">
+        <img src="../../assets/images/Levels_and_Other_Buttons/Back button.webp" height="60px" alt="" srcset="">
+    </div>
+    <br>
+
+</div>

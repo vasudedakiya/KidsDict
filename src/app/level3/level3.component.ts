@@ -1,4 +1,6 @@
+import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiKidsDictService } from '../api-kids-dict.service';
 
 @Component({
@@ -8,23 +10,68 @@ import { ApiKidsDictService } from '../api-kids-dict.service';
 })
 export class Level3Component implements OnInit {
 
-  constructor(private _api: ApiKidsDictService) { }
+  constructor(private _api: ApiKidsDictService, private _activeRoute: ActivatedRoute, private _route: Router) { }
+
+  id: number = 0
+  index: number = 0;
+  imgurl: string = ""
+  demo: { name: string, url: string }[] = []
+  dataLoad = true;
+  spellings: {}[] = []
 
   ngOnInit(): void {
-    console.log(this.makeid(5));
+    this.id = this._activeRoute.snapshot.params.id;
+
+    this._api.getCatData(this.id).subscribe((res: any) => {
+      for (let i = 0; i < res.data.length; i++) {
+        var temp = { name: res.data[i].name, url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img };
+        this.demo.push(temp);
+      }
+      this.dataLoad = false;
+      this.dataS();
+    });
   }
 
+  dataS() {
+    this.spellings.push(this.demo[this.index].name);
+    this.makeid(this.demo[this.index].name);
+    this.displaydata();
+  }
 
-  makeid(length: number) {
-    var result = '';
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() *
-        charactersLength));
+  goBack() {
+    this._route.navigate(['level', 3])
+  }
+
+  changeSlid(id: any) {
+    this.index = this.index + id;
+    this.spellings = []
+    this.dataS();
+  }
+
+  displaydata() {
+    this.imgurl = this.demo[this.index].url;
+    console.log(this.spellings);
+  }
+
+  optioSelect(opt: any) {
+
+  }
+
+  makeid(str: string) {
+    for (let i = 0; i < 3; i++) {
+      var result = '';
+      var characters = str;
+      var charactersLength = str.length;
+      for (var j = 0; j < str.length; j++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      this.spellings.push(result)
     }
-    return result;
+    this.spellings = this.spellings.sort(this.rendome)
   }
 
+  rendome() {
+    return 0.5 - Math.random()
+  }
 
 }
