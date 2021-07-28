@@ -1,4 +1,4 @@
-import { getLocaleFirstDayOfWeek } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiKidsDictService } from '../api-kids-dict.service';
@@ -55,6 +55,37 @@ export class Level3Component implements OnInit {
 
   optioSelect(opt: any) {
 
+    if (this.spellings[opt] === this.demo[this.index].name) {
+      var d: HTMLElement | null = document.getElementById('happy')
+      d?.classList.add('show');
+      let audio = new Audio();
+      audio.src = "../../assets/sound/Sound effect/yuppie.ogg";
+      audio.load();
+      audio.play();
+      setTimeout(() => {
+        d?.classList.remove('show')
+      }, 1300);
+
+      setTimeout(() => {
+        this.changeSlid(1);
+      }, 1500);
+
+
+    }
+
+    else {
+      var d: HTMLElement | null = document.getElementById('sed')
+      d?.classList.add('show');
+
+      let audio = new Audio();
+      audio.src = "../../assets/sound/Sound effect/cartoon_girl_oh_no.ogg";
+      audio.load();
+      audio.play();
+
+      setTimeout(() => {
+        d?.classList.remove('show')
+      }, 1000);
+    }
   }
 
   makeid(str: string) {

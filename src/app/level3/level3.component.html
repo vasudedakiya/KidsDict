@@ -1,5 +1,6 @@
 <div class="bg">
 
+
     <div class="row pt-4">
 
         <div class="col-md-1 ml-1 slidbtn">
@@ -13,7 +14,8 @@
 
         <div class="col-md-3">
             <div>
-                <img src="../../assets/images/Smile/Level-3-Happy face.webp" height="200px" alt="" srcset="">
+                <img src="../../assets/images/Smile/Level-3-Happy face.webp" class="hide" id="happy" height="200px"
+                    alt="" srcset="">
             </div>
         </div>
 
@@ -25,7 +27,8 @@
 
         <div class="col-md-3">
             <div class="smily">
-                <img src="../../assets/images/Smile/Level-3-Sad face.webp" height="200px" alt="" srcset="">
+                <img src="../../assets/images/Smile/Level-3-Sad face.webp" class="hide" id="sed" height="200px" alt=""
+                    srcset="">
             </div>
         </div>
 
@@ -39,7 +42,10 @@
     </div>
 
 
-    <div>
+    <div style="margin-top: 11.6%;" *ngIf="dataLoad === true"> </div>
+
+
+    <div *ngIf="dataLoad === false">
 
         <div class="row">
 
@@ -73,6 +79,7 @@
             <div class="col-md-1"> </div>
         </div>
     </div>
+
 
 
     <div class="col-md-1 back" (click)="goBack()">

@@ -5,7 +5,7 @@
                 <ul id="main">
                         <li *ngFor="let t of ansData; let idx = index">
                                 <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
-                                        *ngIf="t.latter !== 'l' && t.latter !== 'i' && t.latter !== 'j'; else elseBlock;"
+                                        *ngIf="t.latter !== 'i' && t.latter !== 'j'; else elseBlock;"
                                         style="background-image: url({{t.url}});">
                                         <span class="txt">{{t.latter}}&nbsp;</span>
                                 </div>
@@ -26,7 +26,7 @@
                 <ul id="main">
                         <li *ngFor="let t of data; let idx = index">
                                 <div class="spell underl" id="{{ 'wave' + t.latter + (idx+1) }}"
-                                        *ngIf="t.latter !== 'l' && t.latter !== 'i' && t.latter !== 'j'; else elseBlock;"
+                                        *ngIf="t.latter !== 'i' && t.latter !== 'j'; else elseBlock;"
                                         style="padding-right: 2%;">
                                         <span class="txt">&nbsp;</span>
                                 </div>

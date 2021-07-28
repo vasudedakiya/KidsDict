@@ -117,13 +117,18 @@ export class Level2Component implements OnInit {
 
       let temp = { url: "", latter: '\xa0\xa0' }
       this.data[this.count1] = temp;
-      let audio = new Audio();
-      audio.src = "../../assets/sound/Sound effect/sound_keyboard_right.ogg";
-      audio.load();
-      audio.play();
-
+      if (this.count1 + 1 < this.demo[this.index].latter.length) {
+        let audio = new Audio();
+        audio.src = "../../assets/sound/Sound effect/sound_keyboard_right.ogg";
+        audio.load();
+        audio.play();
+      }
       this.count1 += 1
       if (this.count1 == this.demo[this.index].latter.length) {
+        let audio = new Audio();
+        audio.src = "../../assets/sound/Sound effect/yuppie.ogg";
+        audio.load();
+        audio.play();
         setTimeout(() => {
           this.changeSlid(1);
         }, 500);
