@@ -2,16 +2,16 @@
     background-image: url(../../assets/images/Screen_Background/Level_screen_backgroung_min.webp);
     background-repeat: no-repeat;
     background-size: 110% 100%;
-    margin-left: 7%;
-    margin-right: 7%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .devloperImg {
-    margin: 9% auto auto 12%;
+    margin: 9% auto auto 10.5%;
 }
 
 .levels {
-    margin: 7% auto auto 6%;
+    margin: 7% auto auto 3%;
 }
 
 .anima {
