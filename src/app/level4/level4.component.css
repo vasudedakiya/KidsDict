@@ -1,9 +1,9 @@
 .bg {
-    background-image: url(../../assets/images/Screen_Background/Level-4-screen-background.webp);
+    background-image: url(../../assets/images/Screen_Background/Level-2-background.webp);
     background-repeat: no-repeat;
-    background-size: 100% 97%;
-    margin-left: 7%;
-    margin-right: 7%;
+    background-size: 100% 100%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .back {
@@ -20,6 +20,10 @@ ul#main li {
     display: inline;
 }
 
+* {
+    text-transform: uppercase;
+}
+
 .spell {
     background-size: 47px 47px;
     background-repeat: no-repeat;
@@ -32,15 +36,15 @@ ul#main li {
 .txt {
     font-size: larger;
     text-align: center;
-    padding-left: 12px;
+    padding-left: 10px;
     padding-right: 10px;
 }
 
 .txts {
     font-size: larger;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 10px;
+    padding-left: 17px;
+    padding-right: 12px;
 }
 
 .underl {
@@ -83,7 +87,7 @@ ul#main li {
 }
 
 .loader {
-    margin-top: 10%;
+    margin-top: 10.6%;
 }
 
 .anima {

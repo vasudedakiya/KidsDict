@@ -1,7 +1,7 @@
 <div class="bg">
 
 
-        <div id="centerDiv" style="padding-top: 6%;">
+        <div id="centerDiv" style="padding-top: 6%; padding-left: 10px;">
                 <ul id="main">
                         <li *ngFor="let t of ansData; let idx = index">
                                 <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
@@ -192,9 +192,8 @@
                 <div class="col-md-1"></div>
         </div>
 
-        <div class="col-md-1 back" (click)="goBack()">
+        <div class="col-md-1 pt-2 back" (click)="goBack()">
                 <img src="../../assets/images/Levels_and_Other_Buttons/Back button.webp" height="60px" alt="" srcset="">
         </div>
-        <br>
 
 </div>

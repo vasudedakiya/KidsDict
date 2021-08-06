@@ -1,9 +1,13 @@
 .bg {
     background-image: url(../../assets/images/Screen_Background/Level-3-screen-background.webp);
     background-repeat: no-repeat;
-    background-size: 100% 97%;
-    margin-left: 7%;
-    margin-right: 7%;
+    background-size: 110% 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+* {
+    text-transform: uppercase;
 }
 
 .is {

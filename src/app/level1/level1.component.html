@@ -1,6 +1,6 @@
 <div class="bg">
 
-    <br>
+    <span>helo </span>
     <div id="centerDiv">
         <ul id="main">
             <li *ngFor="let t of data; let idx = index">
@@ -33,6 +33,7 @@
         <div class="" *ngIf="dataLoad === false">
             <img src="{{imgurl}}" class="img img-fluid rounded mx-auto d-block imgs" alt="">
         </div>
+
         <div class="d-flex justify-content-center loader" *ngIf="dataLoad === true">
             <div class="spinner-border" role="status">
             </div>
@@ -55,6 +56,6 @@
     <div class="back" (click)="goBack()">
         <img src="../../assets/images/Levels_and_Other_Buttons/Back button.webp" height="60px" alt="" srcset="">
     </div>
-    <br>
+
 
 </div>

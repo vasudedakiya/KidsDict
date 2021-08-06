@@ -1,9 +1,9 @@
 .bg {
     background-image: url(../../assets/images/Screen_Background/Level-2-background.webp);
     background-repeat: no-repeat;
-    background-size: 100% 97%;
-    margin-left: 7%;
-    margin-right: 7%;
+    background-size: 100% 100%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .back {
@@ -32,15 +32,15 @@ ul#main li {
 .txt {
     font-size: larger;
     text-align: center;
-    padding-left: 12px;
-    padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
 }
 
 .txts {
     font-size: larger;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 10px;
+    padding-left: 17px;
+    padding-right: 22px;
 }
 
 .underl {
@@ -83,7 +83,7 @@ ul#main li {
 }
 
 .loader {
-    margin-top: 14%;
+    margin-top: 15.4%;
 }
 
 .anima {
@@ -108,4 +108,8 @@ ul#main li {
     100% {
         opacity: 1;
     }
+}
+
+* {
+    text-transform: uppercase;
 }

@@ -129,9 +129,17 @@ export class Level4Component implements OnInit {
         audio.src = "../../assets/sound/Sound effect/yuppie.ogg";
         audio.load();
         audio.play();
-        setTimeout(() => {
-          this.changeSlid(1);
-        }, 500);
+        if (this.index < this.demo.length - 1) {
+          setTimeout(() => {
+            this.changeSlid(1);
+          }, 500);
+        }
+        else {
+          setTimeout(() => {
+            this._route.navigate(['level', 4])
+          }, 1000);
+
+        }
       }
     }
 

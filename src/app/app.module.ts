@@ -10,6 +10,7 @@ import { Level2Component } from './level2/level2.component';
 import { Level3Component } from './level3/level3.component';
 import { Level4Component } from './level4/level4.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     Level1Component,
     Level2Component,
     Level3Component,
-    Level4Component
+    Level4Component,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

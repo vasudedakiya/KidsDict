@@ -1,9 +1,13 @@
+* {
+    text-transform: uppercase;
+}
+
 .bg {
     background-image: url(../../assets/images/Screen_Background/Level-1-screen-background.webp);
     background-repeat: no-repeat;
-    background-size: 100% 97%;
-    margin-left: 7%;
-    margin-right: 7%;
+    background-size: 100% 100%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .spell {
@@ -18,7 +22,7 @@
 .txt {
     font-size: larger;
     text-align: center;
-    padding-left: 12px;
+    padding-left: 10px;
     padding-right: 10px;
 }
 
@@ -63,14 +67,14 @@ ul#main li {
 }
 
 .imgs {
-    height: 325px;
+    height: 300px;
     margin-top: 50px;
     width: auto;
     float: inline-end;
 }
 
 .back {
-    margin: 0px auto auto .8%;
+    margin: 8px auto auto .8%;
 }
 
 @keyframes runer {
@@ -98,6 +102,6 @@ ul#main li {
 }
 
 .loader {
-    margin-top: 18.5%;
-    margin-bottom: 18.5%;
+    margin-top: 19%;
+    margin-bottom: 19%;
 }

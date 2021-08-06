@@ -63,7 +63,9 @@ export class Level2Component implements OnInit {
         latter: this.demo[this.index].latter[i],
       }
       this.data.push(temp);
-      let temp1 = { url: "", latter: '\xa0\xa0' }
+      let temp1 = {
+        url: "", latter: '\xa0\xa0'
+      }
       this.ansData.push(temp1)
     }
     this.imgurl = this.demo[this.index].url;
@@ -129,9 +131,18 @@ export class Level2Component implements OnInit {
         audio.src = "../../assets/sound/Sound effect/yuppie.ogg";
         audio.load();
         audio.play();
-        setTimeout(() => {
-          this.changeSlid(1);
-        }, 500);
+        if (this.index < this.demo.length - 1) {
+          setTimeout(() => {
+            this.changeSlid(1);
+          }, 500);
+        }
+        else {
+          setTimeout(() => {
+            this._route.navigate(['level', 2])
+          }, 1000);
+
+        }
+
       }
     }
 

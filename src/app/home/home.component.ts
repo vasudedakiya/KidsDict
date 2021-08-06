@@ -17,4 +17,8 @@ export class HomeComponent implements OnInit {
     this._router.navigate(['level', level])
   }
 
+  aboutUs() {
+    this._router.navigate(['aboutus'])
+  }
+
 }

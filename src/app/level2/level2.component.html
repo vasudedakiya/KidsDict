@@ -1,7 +1,7 @@
 <div class="bg">
 
 
-        <div id="centerDiv" style="padding-top: 2%;">
+        <div id="centerDiv" style="padding-top: 10px;">
                 <ul id="main">
                         <li *ngFor="let t of data; let idx = index">
                                 <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
@@ -45,13 +45,13 @@
                                 <div class="spell underl" id="{{ 'wave' + t.latter + (idx+1) }}"
                                         *ngIf=" t.latter !== 'i' && t.latter !== 'j'; else elseBlock;"
                                         style="padding-right: 2%;">
-                                        <span class="txt">&nbsp;</span>
+                                        <span class="txt">&nbsp; </span>
                                 </div>
 
                                 <ng-template #elseBlock>
-                                        <div class="spell underl" id="{{ 'wave' + t.latter + (idx+1) }}"
+                                        <div class=" spell underl" id="{{ 'wave' + t.latter + (idx+1) }}"
                                                 style="padding-right: 2%;">
-                                                <span class="txts">&nbsp;</span>
+                                                <span class="txts">&nbsp; </span>
                                         </div>
                                 </ng-template>
                         </li>
@@ -213,9 +213,8 @@
                 <div class="col-md-1"></div>
         </div>
 
-        <div class="col-md-1 back" (click)="goBack()">
+        <div class="col-md-1 pt-2 back" (click)="goBack()">
                 <img src="../../assets/images/Levels_and_Other_Buttons/Back button.webp" height="60px" alt="" srcset="">
         </div>
-        <br>
 
 </div>

@@ -66,9 +66,17 @@ export class Level3Component implements OnInit {
         d?.classList.remove('show')
       }, 1300);
 
-      setTimeout(() => {
-        this.changeSlid(1);
-      }, 1500);
+      if (this.index < this.demo.length - 1) {
+        setTimeout(() => {
+          this.changeSlid(1);
+        }, 1500);
+      }
+      else {
+        setTimeout(() => {
+          this._route.navigate(['level', 3])
+        }, 2000);
+
+      }
 
 
     }
