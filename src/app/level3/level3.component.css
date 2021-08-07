@@ -40,8 +40,13 @@
 }
 
 .back {
-    margin-top: -2%;
+    margin-top: -1.5%;
     margin-left: -.5%;
+}
+
+.loader {
+    margin-top: 15.7%;
+    margin-bottom: 15.7%;
 }
 
 .smily {

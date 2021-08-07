@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiKidsDictService } from '../api-kids-dict.service';
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _api: ApiKidsDictService, private _router: Router) { }
 
   ngOnInit(): void {
   }
+
+  onSubmit(contactForm: any) {
+    this._api.postMail(contactForm);
+    contactForm.reset();
+  }
+
 
 }

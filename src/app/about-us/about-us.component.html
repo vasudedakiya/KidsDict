@@ -192,17 +192,15 @@
                                 </div>
                                 <label
                                     style="font-weight:650;text-align: justify;font-size: 17.5px;padding-bottom: 10px;">
-                                    D-Typing equipped with wide range of features like typing speed test, practice
-                                    session for beginners
-                                    where we provided complete course of typing test and word game with supports of
-                                    mulitiple language
-                                    like English, Hindi and Gujarati. With the help of D-Typing anyone can improve their
-                                    speed of typing
-                                    along with the accuracy.<br>Feel free to <a href="#contact-form"
-                                        style="scroll-behavior: smooth;">contact us</a> if you would like a certain
+                                    Kids-Dictionary equipped with wide range of features like listen spelling of given
+                                    image , type
+                                    spelling see from upper, select right spelling with see image, type spelling by seen
+                                    image. It will grow your
+                                    child mind with fun. <br>
+                                    Children learn as they play. Most importantly, in play children learn how to learn!!
+                                    <br>Feel free to contact us if you would like a certain
                                     feature to be added or
-                                    if you have a question or problem with anything. We hope you enjoy using this typing
-                                    site!
+                                    if you have a question or problem with anything. We hope you enjoy using this game!
                                 </label>
                             </div>
                         </div>
@@ -284,8 +282,8 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form action="con_sendMessage.php" method="post" autocomplete="off"
-                                    onsubmit="return validateform()" name="myform">
+                                <form autocomplete="off" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm"
+                                    name="myform">
                                     <h6 class="heading-small text-muted mb-4">Send your message to us for any kind of
                                         query or help</h6>
                                     <div class="pl-lg-4">
@@ -293,35 +291,17 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="form-control-label" for="input-name">Name</label>
-                                                    <input type="text" id="input-name" class="form-control"
-                                                        autocomplete="off" placeholder="Your Name" name="name">
+                                                    <input type="text" id="input-name" class="form-control" ngModel
+                                                        required #name="ngModel" placeholder="Your Name" name="name">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="form-control-label" for="input-email">Email</label>
-                                                    <input type="text" id="input-email" class="form-control"
-                                                        autocomplete="off" placeholder="Email Address" name="email">
+                                                    <input type="text" id="input-email" class="form-control" email
+                                                        name="email" ngModel required #email="ngModel"
+                                                        placeholder="Email Address">
                                                     <span style="font-weight: normal;" id="email-error"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label"
-                                                        for="input-subject">Subject</label>
-                                                    <input type="text" id="input-subject" class="form-control"
-                                                        autocomplete="off" placeholder="Enter Subject" name="subject">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label" for="input-contact">Phone
-                                                        Number</label>
-                                                    <input type="text" id="input-contact" class="form-control"
-                                                        placeholder=" with country code" autocomplete="off"
-                                                        name="contact">
                                                 </div>
                                             </div>
                                         </div>
@@ -329,24 +309,21 @@
                                     <div class="pl-lg-4">
                                         <div class="form-group">
                                             <label class="form-control-label" for="input-message">Message</label>
+
                                             <textarea rows="4" class="form-control"
-                                                placeholder="tell us your suggestion / query" autocomplete="off"
-                                                id="input-message" name="message"></textarea>
-                                            <span style="font-weight: normal;" id="message-error"></span>
+                                                placeholder="tell us your suggestion & Mobile number" name="messages"
+                                                ngModel required #messages="ngModel"></textarea>
+
                                         </div>
                                     </div>
                                     <div align="center" class="text-center">
-                                        <div class="g-recaptcha" data-sitekey="6Lffl4QbAAAAAGwk0dSHqrdusFGv4-P01zvadAVo"
-                                            data-callback="verifyCaptcha" style="float: left;padding-left: 25px;"></div>
+                                        <div class="g-recaptcha" style="float: left;padding-left: 25px;"></div>
                                         <div style="float: right;padding-top: 20px;padding-right: 50px;">
-                                            <button class="btn btn-sm"
-                                                style="background-color: #d61b3c;color: white;font-weight: bolder;font-size: 15px;float: right;">
-                                                Submit
-                                            </button>
+                                            <input type="submit" class="btn btn-sm"
+                                                style="background-color: #d61b3c;color: white;font-weight: bolder;font-size: 15px;float: right;"
+                                                value="Submit">
+
                                         </div>
-                                    </div>
-                                    <div style="float: left;padding-left: 25px;">
-                                        <span id="g-recaptcha-error"></span>
                                     </div>
                                 </form>
                             </div>
@@ -461,7 +438,7 @@
                 <div class="row align-items-center justify-content-lg-between">
                     <div class="col-lg-6">
                         <div class="copyright text-center  text-lg-left  text-muted">
-                            &copy; 2020 <a class="font-weight-bold ml-1" target="_blank">D-Typing</a>
+                            &copy; 2021 <a class="font-weight-bold ml-1" target="_blank">Kids-Dictionary</a>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -475,24 +452,4 @@
             </footer>
         </div>
     </div>
-    <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/js-cookie/js.cookie.js"></script>
-    <script src="../assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-    <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-    <script src="../assets/js/typing.js?v=1.2.0"></script>
-    <script type="text/javascript">
-
-        $(window).resize(function () {
-            if (screen.width < 1200) {
-                window.location.href = "http://typing-speed-test.online/mobile/";
-            }
-        });
-
-        $(document).ready(function () {
-            if (screen.width < 1200) {
-                window.location.href = "http://typing-speed-test.online/mobile/";
-            }
-        });
-    </script>
 </body>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 
 
@@ -40,6 +41,19 @@ export class ApiKidsDictService {
     };
 
     return this._http.get(this.apiUrlCateData + id, httpOptions)
+  }
+
+  postMail(contactForm: NgForm) {
+    if (contactForm.valid) {
+      let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      let email = contactForm.value;
+      this._http.post('https://formspree.io/f/mjvjalpz',
+        { name: email.name, replyto: email.email, message: email.messages },
+        { 'headers': headers }).subscribe(function (response: any) {
+          console.log(response);
+        }
+        );
+    }
   }
 
 
