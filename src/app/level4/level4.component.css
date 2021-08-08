@@ -10,10 +10,10 @@
     margin: -50px auto auto -5px;
 }
 
-div#centerDiv {
-    width: 100%;
-    text-align: center;
-    margin-left: -2%;
+#centerDiv {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
 }
 
 ul#main li {
@@ -28,7 +28,7 @@ ul#main li {
     background-size: 47px 47px;
     background-repeat: no-repeat;
     align-items: center;
-    margin: auto 3px auto 3px;
+    margin: auto 3px auto 1px;
     font-size: 35px;
     display: inline;
 }
@@ -87,7 +87,7 @@ ul#main li {
 }
 
 .loader {
-    margin-top: 10.6%;
+    margin-top: 9.4%;
 }
 
 .anima {

@@ -44,7 +44,7 @@ export class Level4Component implements OnInit {
   }
 
   goBack() {
-    this._route.navigate(['level', 2])
+    this._route.navigate(['level', 4])
   }
 
   changeSlid(id: any) {
@@ -88,6 +88,11 @@ export class Level4Component implements OnInit {
 
   }
 
+  onKey(event: any) {
+    this.appendLatter(event.target.value);
+    event.target.value = "";
+  }
+
   appendLatter(lat: string) {
 
     if (lat === 'Backspace' && this.count1 !== 0) {
@@ -97,7 +102,7 @@ export class Level4Component implements OnInit {
         latter: this.demo[this.index].latter[this.count1 - 1]
       }
       this.data[this.count1 - 1] = temp1
-      let temp = { url: "", latter: '\xa0\xa0' }
+      let temp = { url: "", latter: '\xa0\xa0\xa0' }
       this.ansData[this.count1 - 1] = temp;
       this.count1 -= 1
     }
@@ -115,7 +120,7 @@ export class Level4Component implements OnInit {
       }
       this.ansData[this.count1] = temp1;
 
-      let temp = { url: "", latter: '\xa0\xa0' }
+      let temp = { url: "", latter: '\xa0\xa0\xa0' }
       this.data[this.count1] = temp;
       if (this.count1 + 1 < this.demo[this.index].latter.length) {
         let audio = new Audio();

@@ -1,45 +1,32 @@
 <div class="bg">
 
+        <table id="centerDiv" class="pt-1">
 
-        <div id="centerDiv" style="padding-top: 6%; padding-left: 10px;">
-                <ul id="main">
-                        <li *ngFor="let t of ansData; let idx = index">
+                <tr style="position: relative;">
+                        <td *ngFor="let t of ansData; let idx = index">
                                 <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
                                         *ngIf="t.latter !== 'i' && t.latter !== 'j'; else elseBlock;"
                                         style="background-image: url({{t.url}});">
-                                        <span class="txt">{{t.latter}}&nbsp;</span>
+                                        <span class="txt">{{t.latter}}&#8198;</span>
                                 </div>
 
                                 <ng-template #elseBlock>
                                         <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
                                                 style="background-image: url({{t.url}});">
-                                                <span class="txts">{{t.latter}}&nbsp;</span>
+                                                <span class="txts">{{t.latter}}&#8198;</span>
                                         </div>
                                 </ng-template>
-                        </li>
-                </ul>
-        </div>
+                        </td>
+                </tr>
 
-
-
-        <div id="centerDiv" style="margin-top: -7%;">
-                <ul id="main">
-                        <li *ngFor="let t of data; let idx = index">
-                                <div class="spell underl" id="{{ 'wave' + t.latter + (idx+1) }}"
-                                        *ngIf="t.latter !== 'i' && t.latter !== 'j'; else elseBlock;"
-                                        style="padding-right: 2%;">
-                                        <span class="txt">&nbsp;</span>
+                <tr style="top: -45%;position: relative;">
+                        <td *ngFor="let t of data; let idx = index">
+                                <div class="spell underl" id="{{ 'wave' + t.latter + (idx+1) }}" style="">
+                                        <span class="txt">&nbsp;&nbsp;&nbsp;</span>
                                 </div>
-
-                                <ng-template #elseBlock>
-                                        <div class="spell underl" id="{{ 'wave' + t.latter + (idx+1) }}"
-                                                style="padding-right: 2%;">
-                                                <span class="txts">&nbsp;</span>
-                                        </div>
-                                </ng-template>
-                        </li>
-                </ul>
-        </div>
+                        </td>
+                </tr>
+        </table>
 
         <div class="d-flex justify-content-center text-light loader" *ngIf="dataLoad === true">
                 <div class="spinner-border" role="status">
@@ -87,6 +74,17 @@
                         </ng-template>
                 </div>
         </div>
+
+
+
+
+
+
+        <div style="">
+                <input (keyup)="onKey($event)" autofocus>
+        </div>
+
+
 
         <div class="row mt-1">
                 <div class="col-md-1"></div>

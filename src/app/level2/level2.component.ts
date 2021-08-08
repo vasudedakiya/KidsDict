@@ -90,6 +90,11 @@ export class Level2Component implements OnInit {
 
   }
 
+  onKey(event: any) {
+    this.appendLatter(event.target.value);
+    event.target.value = "";
+  }
+
   appendLatter(lat: string) {
 
     if (lat === 'Backspace' && this.count1 !== 0) {
