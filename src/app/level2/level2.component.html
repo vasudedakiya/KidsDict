@@ -23,14 +23,14 @@
                                         style="background-image: url({{t.url}});">
                                         <span class="txt">{{t.latter}}&#8198;</span>
                                 </div>
+                                <ng-template #elseBlock>
+                                        <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
+                                                style="background-image: url({{t.url}});">
+                                                <span class="txts">{{t.latter}}&#8198;</span>
+                                        </div>
+                                </ng-template>
                         </td>
 
-                        <ng-template #elseBlock>
-                                <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
-                                        style="background-image: url({{t.url}});">
-                                        <span class="txts">{{t.latter}}&#8198;</span>
-                                </div>
-                        </ng-template>
                 </tr>
 
                 <tr style="top: -45%;position: relative;">
@@ -94,7 +94,7 @@
                 </div>
         </div>
 
-        <div style="">
+        <div>
                 <input (keyup)="onKey($event)" autofocus>
         </div>
 
