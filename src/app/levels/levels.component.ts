@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiKidsDictService } from '../api-kids-dict.service';
+
 
 @Component({
   selector: 'app-levels',
@@ -30,6 +31,17 @@ export class LevelsComponent implements OnInit {
 
   goBack() {
     this._router.navigate([''])
+  }
+
+  @ViewChild('widgetsContent')
+  widgetsContent!: ElementRef;
+
+  scrollLeft() {
+    this.widgetsContent.nativeElement.scrollLeft -= 180;
+  }
+
+  scrollRight() {
+    this.widgetsContent.nativeElement.scrollLeft += 180;
   }
 
 }

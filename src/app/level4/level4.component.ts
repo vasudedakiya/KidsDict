@@ -35,7 +35,11 @@ export class Level4Component implements OnInit {
       this.dataS();
 
     });
-
+    window.addEventListener('keydown', (event: KeyboardEvent) => {
+      const keycode = event.keyCode || event.which;
+      let temp: string = String.fromCharCode(keycode);
+      this.appendLatter(temp.toLowerCase());
+    });
 
   }
 
@@ -88,12 +92,9 @@ export class Level4Component implements OnInit {
 
   }
 
-  onKey(event: any) {
-    this.appendLatter(event.target.value);
-    event.target.value = "";
-  }
-
   appendLatter(lat: string) {
+
+    console.log(lat);
 
     if (lat === 'Backspace' && this.count1 !== 0) {
 
@@ -110,6 +111,7 @@ export class Level4Component implements OnInit {
     else if (lat === 'Erasor') {
       this.changeSlid(0);
     }
+
 
 
     else if (this.count1 < this.demo[this.index].latter.length && lat === this.demo[this.index].latter[this.count1].toLocaleLowerCase()) {

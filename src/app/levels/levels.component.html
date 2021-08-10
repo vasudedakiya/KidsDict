@@ -17,13 +17,44 @@
     </div>
 
 
-    <div class="scrollmenu " id="scrollmenua">
+    <div class="row ra" *ngIf="dataLoad === false">
+        <div class="col-md-2" (click)="scrollLeft()">
+            <div class="il">
+                <i class="fas fa-chevron-left is"></i>
+            </div>
+        </div>
+
+        <div class="col-md-2" style="margin-left: 65%;">
+            <div class="ir" (click)="scrollRight()">
+                <i class="fas fa-chevron-right is"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="scrollmenu " #widgetsContent id="scrollmenua">
 
         <a (click)="goCate(c.id)" *ngFor="let c of categorys">
             <img src="https://kidsdictionary.arjunbala.com/{{c.img}}" class="cate" alt="">
         </a>
 
     </div>
+
+
+    <!-- <table >
+        <tr>
+
+            <td>
+                <section class="scrollmenu" style="width: 40%;" id="scrollmenua">
+
+                    <a (click)="goCate(c.id)" *ngFor="let c of categorys">
+                        <img src="https://kidsdictionary.arjunbala.com/{{c.img}}" class="cate" alt="">
+                    </a>
+                </section>
+            </td>
+
+        </tr>
+    </table> -->
 
 
     <!-- For Offline Work -->

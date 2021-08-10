@@ -1,4 +1,4 @@
-<div class="bg">
+<div class="bg" (keyup)="onKey($event)">
         <table id="centerDiv">
                 <tr>
                         <td *ngFor="let t of data; let idx = index">
@@ -94,9 +94,6 @@
                 </div>
         </div>
 
-        <div>
-                <input (keyup)="onKey($event)" autofocus>
-        </div>
 
         <div class="row mt-1">
                 <div class="col-md-1"></div>

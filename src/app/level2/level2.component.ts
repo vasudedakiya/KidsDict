@@ -36,6 +36,12 @@ export class Level2Component implements OnInit {
 
     });
 
+    window.addEventListener('keydown', (event: KeyboardEvent) => {
+      const keycode = event.keyCode || event.which;
+      let temp: string = String.fromCharCode(keycode);
+      this.appendLatter(temp.toLowerCase());
+    });
+
 
   }
 

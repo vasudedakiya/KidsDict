@@ -12,7 +12,7 @@
 
 div.scrollmenu {
     -ms-overflow-style: none;
-    margin: 9.4% 14% auto 14%;
+    margin: -16% 14% auto 14%;
     overflow: auto;
     white-space: nowrap;
 }
@@ -31,6 +31,26 @@ div.scrollmenu a {
     text-align: center;
     padding: 14px;
     text-decoration: none;
+}
+
+.ra {
+    margin-top: 11%;
+}
+
+.is {
+    color: rgb(216, 139, 67);
+    font-size: 150px;
+}
+
+.il {
+    float: left;
+    margin-left: 2%;
+    margin-right: -10%;
+}
+
+.ir {
+    float: right;
+    margin-right: 2%;
 }
 
 .cate {
@@ -71,6 +91,6 @@ div.scrollmenu a {
 /* ------loader----------- */
 
 .load {
-    margin-top: 12%;
-    margin-bottom: 12.2%;
+    margin-top: 18%;
+    margin-bottom: 22.4%;
 }
