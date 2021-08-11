@@ -2,8 +2,12 @@
     background-image: url(../../assets/images/Screen_Background/Level-2-background.webp);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 16%;
+    margin-right: 16%;
+}
+
+* {
+    text-transform: uppercase;
 }
 
 .back {
@@ -18,10 +22,6 @@
 
 ul#main li {
     display: inline;
-}
-
-* {
-    text-transform: uppercase;
 }
 
 .spell {
@@ -64,7 +64,7 @@ ul#main li {
 
 .is {
     color: rgb(216, 139, 67);
-    font-size: 150px;
+    font-size: 110px;
 }
 
 .kbhh {
@@ -72,17 +72,15 @@ ul#main li {
 }
 
 .kbmr {
-    width: 90px;
-    height: 60px;
+    width: 50px;
 }
 
 .kblr {
-    width: 100px;
-    height: 50px;
+    width: 50px;
 }
 
 .loader {
-    margin-top: 9.4%;
+    margin-top: 11%;
 }
 
 .anima {

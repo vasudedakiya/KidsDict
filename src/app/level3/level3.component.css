@@ -1,9 +1,10 @@
 .bg {
-    background-image: url(../../assets/images/Screen_Background/Level-3-screen-background.webp);
-    background-repeat: no-repeat;
-    background-size: 110% 100%;
-    margin-left: 10%;
-    margin-right: 10%;
+    /* background-image: url(../../assets/images/Screen_Background/Level-3-screen-background.webp); */
+    background-color: black;
+    /* background-repeat: no-repeat; */
+    background-size: 100% 100%;
+    margin-left: 16%;
+    margin-right: 16%;
 }
 
 * {
@@ -12,7 +13,7 @@
 
 .is {
     color: rgb(216, 139, 67);
-    font-size: 150px;
+    font-size: 110px;
 }
 
 .slidbtn {
@@ -40,12 +41,12 @@
 }
 
 .back {
-    margin-top: -1.5%;
+    margin-top: -3%;
     margin-left: -.5%;
 }
 
 .loader {
-    margin-top: 15.7%;
+    margin-top: 15.4%;
     margin-bottom: 15.7%;
 }
 

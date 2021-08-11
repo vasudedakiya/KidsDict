@@ -1,32 +1,184 @@
-<audio autoplay loop>
-    <source src="../../assets/sound/Sound effect/dashboard_sound.ogg" type="audio/ogg">
-</audio>
-<div class="bg">
+<div *ngIf="mobile===false">
 
-    <div>
-        <a (click)="aboutUs()">
-            <img src="../../assets/images/Screen_Background/Developer_Button_min.webp" class="devloperImg"
-                height="120px">
-        </a>
+    <audio autoplay loop>
+        <source src="../../assets/sound/Sound effect/dashboard_sound.ogg" type="audio/ogg">
+    </audio>
+    <div class="bg">
+
+        <div>
+            <a (click)="aboutUs()">
+                <img src="../../assets/images/Screen_Background/Developer_Button_min.webp" class="devloperImg"
+                    height="100px">
+            </a>
+        </div>
+
+        <div class="levels">
+
+            <img src="../../assets/images/Levels_and_Other_Buttons/Engine.webp" class="anima" height="170px" alt="">
+            <a (click)="goto(1)">
+                <img src="../../assets/images/Levels_and_Other_Buttons/Level-1.webp" class="anima" height="170px"
+                    alt="">
+            </a>
+            <a (click)="goto(2)">
+                <img src="../../assets/images/Levels_and_Other_Buttons/Level-2.webp" class="anima" height="170px"
+                    alt="">
+            </a>
+            <a (click)="goto(3)">
+                <img src="../../assets/images/Levels_and_Other_Buttons/Level-3.webp" class="anima" height="170px"
+                    alt="">
+            </a>
+            <a (click)="goto(4)">
+                <img src="../../assets/images/Levels_and_Other_Buttons/Level-4.webp" class="anima" height="170px"
+                    alt="">
+            </a>
+
+        </div>
+
+        <br>
     </div>
 
-    <div class="levels">
+</div>
 
-        <img src="../../assets/images/Levels_and_Other_Buttons/Engine.webp" class="anima" height="200px" alt="">
-        <a (click)="goto(1)">
-            <img src="../../assets/images/Levels_and_Other_Buttons/Level-1.webp" class="anima" height="200px" alt="">
-        </a>
-        <a (click)="goto(2)">
-            <img src="../../assets/images/Levels_and_Other_Buttons/Level-2.webp" class="anima" height="200px" alt="">
-        </a>
-        <a (click)="goto(3)">
-            <img src="../../assets/images/Levels_and_Other_Buttons/Level-3.webp" class="anima" height="200px" alt="">
-        </a>
-        <a (click)="goto(4)">
-            <img src="../../assets/images/Levels_and_Other_Buttons/Level-4.webp" class="anima" height="200px" alt="">
-        </a>
 
+
+
+
+
+
+
+
+
+<!-- mobile -->
+<!-- ------------------------------------------------------------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="mobile === true" style="background-color: black; color: white;">
+
+    <!-- Top menu on small screens -->
+    <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+
+        <div class="w3-bar-item w3-padding-24 w3-wide">
+            <img src="https://play-lh.googleusercontent.com/sIWVNCc5xR4_7Xbp6b3kNmBSD1dyNpK6JbXFzHFqByoeC3nilO9WqdOHynpLBgQgJq3A=s360-rw"
+                alt="" class="mr-3" height="30px" style="float: left;" srcset=""> kids-dictonary
+        </div>
+    </header>
+
+
+
+
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:250px">
+
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+
+
+        <!-- Image header -->
+        <div class="w3-display-container w3-container">
+            <h1><b>
+                    Mobile App of
+                    <span style="color:red;">
+                        Kids-Dictonary
+                    </span>
+                    <br>
+
+                    for your child
+                </b>
+            </h1>
+        </div>
+
+        <div class="w3-display-container w3-container">
+            <h5>We alrady developed a mobile application for your kids</h5>
+        </div>
+
+        <div style="margin-left: 30%; margin-top: 6%;">
+            <a class=" btn btn-dark rounded-pill page-scroll"
+                href="https://play.google.com/store/apps/details?id=com.aswdc_kidsdictionary" target="_blank"><i
+                    class="fab fa-google-play"></i>PLAY STORE</a>
+        </div>
     </div>
 
-    <br>
+
+    <!--  -->
+
+    <div class="footer" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col">
+                        <h4><a href="http://www.aswdc.in/About-Us" target="_blank"
+                                style="color:darkgray;text-decoration: none"><b>About Us</b></a></h4>
+                        <h4><a href="http://www.aswdc.in/Contact-Us" target="_blank"
+                                style="color: darkgray;text-decoration: none"><b>Contact Us</b></a></h4>
+
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col middle">
+                        <h4>Important Links</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square mt-1"></i>
+                                <div class="media-body ml-2">Our Devloper Site : <a style="color: blue;"
+                                        href="http://www.aswdc.in/" target="_blank">aswdc.in</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square mt-1"></i>
+                                <div class="media-body ml-2">Our College Site : <a style="color: blue;"
+                                        href="http://www.darshan.ac.in/" target="_blank">darshan.ac.in</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col last">
+                        <h4>Social Media</h4>
+                        <span class="fa-stack">
+                            <a href="https://www.facebook.com/DarshanInstitute.Official" target="_blank">
+                                <i class="fab fa-facebook-f fa-stack-1x "></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://twitter.com/darshan_inst" target="_blank">
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://www.linkedin.com/school/darshan-institute-of-engineering-&amp;-technology/"
+                                target="_blank">
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://www.instagram.com/darshan_inst/" target="_blank">
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://www.youtube.com/channel/UC3TJzmjHMJGtgK-jI4I-Eaw" target="_blank">
+                                <i class="fab fa-youtube fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div>
+
+    <!--  -->
+
 </div>

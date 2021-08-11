@@ -6,8 +6,8 @@
     background-image: url(../../assets/images/Screen_Background/Level-1-screen-background.webp);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 15.5%;
+    margin-right: 15.5%;
 }
 
 .spell {
@@ -62,8 +62,8 @@ ul#main li {
 }
 
 .imgs {
-    height: 300px;
-    margin-top: 50px;
+    height: 250px;
+    margin-top: 3.3%;
     width: auto;
     float: inline-end;
 }
@@ -97,6 +97,6 @@ ul#main li {
 }
 
 .loader {
-    margin-top: 19%;
-    margin-bottom: 19%;
+    margin-top: 18%;
+    margin-bottom: 18%;
 }

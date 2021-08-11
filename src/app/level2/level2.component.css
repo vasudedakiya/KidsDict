@@ -1,9 +1,13 @@
+* {
+    text-transform: uppercase;
+}
+
 .bg {
     background-image: url(../../assets/images/Screen_Background/Level-2-background.webp);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 16%;
+    margin-right: 16%;
 }
 
 .back {
@@ -16,16 +20,12 @@
     width: auto;
 }
 
-ul#main li {
-    display: inline;
-}
-
 .spell {
-    background-size: 47px 47px;
+    background-size: 40px 40px;
     background-repeat: no-repeat;
     align-items: center;
     margin: auto 3px auto 3px;
-    font-size: 35px;
+    font-size: 30px;
     display: inline;
 }
 
@@ -60,7 +60,7 @@ ul#main li {
 
 .is {
     color: rgb(216, 139, 67);
-    font-size: 150px;
+    font-size: 110px;
 }
 
 .kbhh {
@@ -68,17 +68,15 @@ ul#main li {
 }
 
 .kbmr {
-    width: 90px;
-    height: 60px;
+    width: 50px;
 }
 
 .kblr {
-    width: 100px;
-    height: 50px;
+    width: 50px;
 }
 
 .loader {
-    margin-top: 15.9%;
+    margin-top: 15.7%;
 }
 
 .anima {
@@ -103,8 +101,4 @@ ul#main li {
     100% {
         opacity: 1;
     }
-}
-
-* {
-    text-transform: uppercase;
 }

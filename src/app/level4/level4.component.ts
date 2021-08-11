@@ -38,7 +38,9 @@ export class Level4Component implements OnInit {
     window.addEventListener('keydown', (event: KeyboardEvent) => {
       const keycode = event.keyCode || event.which;
       let temp: string = String.fromCharCode(keycode);
-      this.appendLatter(temp.toLowerCase());
+      if (keycode >= 65 && keycode <= 90) {
+        this.appendLatter(temp.toLowerCase());
+      }
     });
 
   }
@@ -89,6 +91,10 @@ export class Level4Component implements OnInit {
     }, 1000);
 
     this.demo[this.index].latter[this.count1].toLocaleLowerCase()
+
+  }
+
+  onKey(event: any) {
 
   }
 

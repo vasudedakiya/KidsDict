@@ -37,7 +37,7 @@
                         <td *ngFor="let t of data; let idx = index">
                                 <div class="spell underl" id="{{ 'wave' + t.latter + (idx+1) }}"
                                         style="padding-right: 2%;">
-                                        <span class="txt">&nbsp;&nbsp;</span>
+                                        <span class="txt">&nbsp;&#8198;</span>
                                 </div>
                         </td>
                 </tr>
@@ -51,7 +51,7 @@
                 <b> &nbsp; &nbsp; Loding data...</b>
         </div>
 
-        <div class="row" style="margin-top: -4%;">
+        <div class="row" style="margin-top: -5%;">
 
                 <div class="col-md-1">
                         <div class="il" *ngIf="index === 0; else elsePrev">
@@ -61,13 +61,14 @@
                                 </div>
                         </ng-template>
                 </div>
+                <div class="col-md-1"></div>
 
                 <div class="col-md-2">
                         <img src="../../assets/images/Keyboard/Home.webp" (click)="goHome()"
                                 class="img img-fluid rounded mx-auto d-block kbhh" alt="">
                 </div>
 
-                <div class="col-md-2"></div>
+                <div class="col-md-1"></div>
 
                 <div class="col-md-2">
                         <div class="">
@@ -77,12 +78,13 @@
 
 
 
-                <div class="col-md-2"></div>
+                <div class="col-md-1"></div>
 
                 <div class="col-md-2">
                         <img src="../../assets/images/Keyboard/Help.webp" (click)="help()"
                                 class="img img-fluid rounded mx-auto d-block kbhh" alt="">
                 </div>
+                <div class="col-md-1"></div>
 
 
                 <div class="col-md-1">
@@ -94,109 +96,113 @@
                 </div>
         </div>
 
+        <div style="margin-left: 12%; margin-right: 15%;">
 
-        <div class="row mt-1">
-                <div class="col-md-1"></div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/Q.webp" id="q"
-                                class="img kbmr rounded mx-auto d-block" (click)="appendLatter('q')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/W.webp" id="w"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('w')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/E.webp" id="e"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('e')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/R.webp" id="r"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('r')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/T.webp" id="t"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('t')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/Y.webp" id="y"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('y')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/U.webp" id="u"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('u')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/I.webp" id="i"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('i')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/O.webp" id="o"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('o')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/P.webp" id="p"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('p')" alt="">
-                </div>
-                <div class="col-md-1"></div>
-        </div>
-
-        <div class="row mt-1">
-                <div class="col-md-1" style="margin-right: 3%;"></div>
-
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/A.webp" id="a"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('a')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/S.webp" id="s"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('s')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/D.webp" is="d"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('d')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/F.webp" id="f"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('f')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/G.webp" id="g"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('g')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/H.webp" id="h"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('h')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/J.webp" id="j"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('j')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/K.webp" id="k"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('k')" alt="">
-                </div>
-                <div class="col-md-1"><img src="../../assets/images/Keyboard/L.webp" id="l"
-                                class="img kbmr rounded mx-auto d-block " (click)="appendLatter('l')" alt="">
-                </div>
-                <div class="col-md-1"></div>
-        </div>
-
-        <div class="row mt-1">
-                <div class="col-md-1">
-
-                </div>
-                <div class="col-md-1 mr-3"><img src="../../assets/images/Keyboard/Erasor.webp"
-                                class="img rounded mx-auto d-block kblr" (click)="appendLatter('Erasor')" alt="">
-                </div>
-                <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/Z.webp" id="z"
-                                class="img rounded mx-auto d-block kblr" (click)="appendLatter('z')" alt="">
-                </div>
-                <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/X.webp" id="x"
-                                class="img kblr rounded mx-auto d-block " (click)="appendLatter('x')" alt="">
-                </div>
-                <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/C.webp" id="c"
-                                class="img kblr rounded mx-auto d-block " (click)="appendLatter('c')" alt="">
-                </div>
-                <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/V.webp" id="v"
-                                class="img kblr rounded mx-auto d-block " (click)="appendLatter('v')" alt="">
-                </div>
-                <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/B.webp" id="b"
-                                class="img kblr rounded mx-auto d-block " (click)="appendLatter('b')" alt="">
-                </div>
-                <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/N.webp" id="n"
-                                class="img kblr rounded mx-auto d-block " (click)="appendLatter('n')" alt="">
-                </div>
-                <div class="col-md-1 mr-3"><img src="../../assets/images/Keyboard/M.webp" id="m"
-                                class="img kblr rounded mx-auto d-block " (click)="appendLatter('m')" alt="">
-                </div>
-                <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/Backspace.webp"
-                                class="img kblr rounded mx-auto d-block " (click)="appendLatter('Backspace')" alt="">
+                <div class="row mt-1">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/Q.webp" id="q"
+                                        class="img kbmr rounded mx-auto d-block" (click)="appendLatter('q')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/W.webp" id="w"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('w')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/E.webp" id="e"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('e')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/R.webp" id="r"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('r')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/T.webp" id="t"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('t')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/Y.webp" id="y"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('y')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/U.webp" id="u"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('u')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/I.webp" id="i"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('i')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/O.webp" id="o"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('o')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/P.webp" id="p"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('p')" alt="">
+                        </div>
+                        <div class="col-md-1"></div>
                 </div>
 
-                <div class="col-md-1" style="margin-left: -100%;"></div>
-                <div class="col-md-1"></div>
+                <div class="row mt-1">
+                        <div class="col-md-1" style="margin-right: 3%;"></div>
+
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/A.webp" id="a"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('a')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/S.webp" id="s"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('s')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/D.webp" is="d"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('d')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/F.webp" id="f"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('f')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/G.webp" id="g"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('g')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/H.webp" id="h"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('h')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/J.webp" id="j"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('j')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/K.webp" id="k"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('k')" alt="">
+                        </div>
+                        <div class="col-md-1"><img src="../../assets/images/Keyboard/L.webp" id="l"
+                                        class="img kbmr rounded mx-auto d-block " (click)="appendLatter('l')" alt="">
+                        </div>
+                        <div class="col-md-1"></div>
+                </div>
+
+                <div class="row mt-1 ">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/Erasor.webp"
+                                        class="img rounded mx-auto d-block kblr" (click)="appendLatter('Erasor')"
+                                        alt="">
+                        </div>
+                        <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/Z.webp" id="z"
+                                        class="img rounded mx-auto d-block kblr" (click)="appendLatter('z')" alt="">
+                        </div>
+                        <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/X.webp" id="x"
+                                        class="img kblr rounded mx-auto d-block " (click)="appendLatter('x')" alt="">
+                        </div>
+                        <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/C.webp" id="c"
+                                        class="img kblr rounded mx-auto d-block " (click)="appendLatter('c')" alt="">
+                        </div>
+                        <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/V.webp" id="v"
+                                        class="img kblr rounded mx-auto d-block " (click)="appendLatter('v')" alt="">
+                        </div>
+                        <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/B.webp" id="b"
+                                        class="img kblr rounded mx-auto d-block " (click)="appendLatter('b')" alt="">
+                        </div>
+                        <div class="col-md-1 mr-2"><img src="../../assets/images/Keyboard/N.webp" id="n"
+                                        class="img kblr rounded mx-auto d-block " (click)="appendLatter('n')" alt="">
+                        </div>
+                        <div class="col-md-1 mr-1"><img src="../../assets/images/Keyboard/M.webp" id="m"
+                                        class="img kblr rounded mx-auto d-block " (click)="appendLatter('m')" alt="">
+                        </div>
+                        <div class="col-md-1 mr-4"><img src="../../assets/images/Keyboard/Backspace.webp"
+                                        class="img kblr rounded mx-auto d-block " (click)="appendLatter('Backspace')"
+                                        alt="">
+                        </div>
+
+                        <div class="col-md-1" style="margin-left: -100%;"></div>
+                        <div class="col-md-1"></div>
+                </div>
+
         </div>
 
         <div class="col-md-1 pt-2 back" (click)="goBack()">

@@ -37,11 +37,11 @@ export class LevelsComponent implements OnInit {
   widgetsContent!: ElementRef;
 
   scrollLeft() {
-    this.widgetsContent.nativeElement.scrollLeft -= 180;
+    this.widgetsContent.nativeElement.scrollLeft -= 160;
   }
 
   scrollRight() {
-    this.widgetsContent.nativeElement.scrollLeft += 180;
+    this.widgetsContent.nativeElement.scrollLeft += 160;
   }
 
 }

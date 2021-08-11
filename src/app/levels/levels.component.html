@@ -6,7 +6,7 @@
 
 
     <div class="cattxt">
-        <img src="../../assets/images/Screen_Background/categories.webp" class="" alt="">
+        <img src="../../assets/images/Screen_Background/categories.webp" class="" height="80px" alt="">
     </div>
 
 
@@ -17,26 +17,30 @@
     </div>
 
 
-    <div class="row ra" *ngIf="dataLoad === false">
-        <div class="col-md-2" (click)="scrollLeft()">
-            <div class="il">
-                <i class="fas fa-chevron-left is"></i>
+    <div style="margin-top: 14.5%;">
+
+        <div class="row ra" *ngIf="dataLoad === false">
+            <div class="col-md-2" (click)="scrollLeft()">
+                <div class="il">
+                    <i class="fas fa-chevron-left is"></i>
+                </div>
+            </div>
+
+            <div class="col-md-2" style="margin-left: 65%;">
+                <div class="ir" (click)="scrollRight()">
+                    <i class="fas fa-chevron-right is"></i>
+                </div>
             </div>
         </div>
 
-        <div class="col-md-2" style="margin-left: 65%;">
-            <div class="ir" (click)="scrollRight()">
-                <i class="fas fa-chevron-right is"></i>
-            </div>
+
+        <div class="scrollmenu " #widgetsContent id="scrollmenua">
+
+            <a (click)="goCate(c.id)" *ngFor="let c of categorys">
+                <img src="https://kidsdictionary.arjunbala.com/{{c.img}}" class="cate" alt="">
+            </a>
+
         </div>
-    </div>
-
-
-    <div class="scrollmenu " #widgetsContent id="scrollmenua">
-
-        <a (click)="goCate(c.id)" *ngFor="let c of categorys">
-            <img src="https://kidsdictionary.arjunbala.com/{{c.img}}" class="cate" alt="">
-        </a>
 
     </div>
 
