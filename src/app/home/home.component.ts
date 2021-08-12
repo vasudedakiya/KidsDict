@@ -10,9 +10,12 @@ export class HomeComponent implements OnInit {
 
   constructor(private _router: Router) { }
 
+  wid: number = 0
   mobile = false
   ngOnInit(): void {
+
     setInterval(() => {
+      this.wid = window.screen.width;
       if (window.screen.width <= 1024) { // 768px portrait
         this.mobile = true;
       }

@@ -29,6 +29,10 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
     /* animation-direction: alternate-reverse; */
 }
 
+.blbg {
+    background-color: black;
+}
+
 @keyframes train {
     from {
         /* margin-left: 0px;  */
