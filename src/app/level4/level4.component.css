@@ -25,11 +25,11 @@ ul#main li {
 }
 
 .spell {
-    background-size: 47px 47px;
+    background-size: 75% 100%;
     background-repeat: no-repeat;
     align-items: center;
-    margin: auto 3px auto 1px;
-    font-size: 35px;
+    margin: auto auto auto auto;
+    font-size: 37px;
     display: inline;
 }
 
@@ -80,7 +80,7 @@ ul#main li {
 }
 
 .loader {
-    margin-top: 11%;
+    margin-top: 12.5%;
 }
 
 .anima {

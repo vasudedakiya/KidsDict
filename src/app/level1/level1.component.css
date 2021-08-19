@@ -11,11 +11,11 @@
 }
 
 .spell {
-    background-size: 47px 47px;
+    background-size: 75% 100%;
     background-repeat: no-repeat;
     align-items: center;
-    margin: auto 3px auto 3px;
-    font-size: 35px;
+    margin: auto auto auto auto;
+    font-size: 37px;
     display: inline;
 }
 
@@ -23,13 +23,6 @@
     font-size: larger;
     text-align: center;
     padding-left: 10px;
-    padding-right: 10px;
-}
-
-.txts {
-    font-size: larger;
-    text-align: center;
-    padding-left: 20px;
     padding-right: 10px;
 }
 

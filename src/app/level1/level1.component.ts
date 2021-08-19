@@ -77,8 +77,15 @@ export class Level1Component implements OnInit {
 
   displaydata() {
     for (let i = 0; i < this.demo[this.index].latter.length; i++) {
+      let j = 0;
+      if (i < 8) {
+        j = i
+      }
+      else {
+        j = i - 8
+      }
       let temp = {
-        url: "../../assets/images/Spelling_Button/SpelingButton" + (i + 1) + ".webp",
+        url: "../../assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[i],
       }
       this.data.push(temp);

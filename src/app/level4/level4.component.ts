@@ -64,8 +64,15 @@ export class Level4Component implements OnInit {
   displaydata() {
 
     for (let i = 0; i < this.demo[this.index].latter.length; i++) {
+      let j = 0;
+      if (i < 8) {
+        j = i
+      }
+      else {
+        j = i - 8
+      }
       let temp = {
-        url: "../../assets/images/Spelling_Button/SpelingButton" + (i + 1) + ".webp",
+        url: "../../assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[i],
       }
       this.data.push(temp);
@@ -104,9 +111,16 @@ export class Level4Component implements OnInit {
 
     if (lat === 'Backspace' && this.count1 !== 0) {
 
+      let j = 0;
+      if (this.count1 < 8) {
+        j = this.count1
+      }
+      else {
+        j = this.count1 - 8
+      }
       let temp1 = {
-        url: "../../assets/images/Spelling_Button/SpelingButton" + (this.count1) + ".webp",
-        latter: this.demo[this.index].latter[this.count1 - 1]
+        url: "../../assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
+        latter: this.demo[this.index].latter[this.count1]
       }
       this.data[this.count1 - 1] = temp1
       let temp = { url: "", latter: '\xa0\xa0\xa0' }
@@ -122,8 +136,15 @@ export class Level4Component implements OnInit {
 
     else if (this.count1 < this.demo[this.index].latter.length && lat === this.demo[this.index].latter[this.count1].toLocaleLowerCase()) {
 
+      let j = 0;
+      if (this.count1 < 8) {
+        j = this.count1
+      }
+      else {
+        j = this.count1 - 8
+      }
       let temp1 = {
-        url: "../../assets/images/Spelling_Button/SpelingButton" + (this.count1 + 1) + ".webp",
+        url: "../../assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[this.count1]
       }
       this.ansData[this.count1] = temp1;

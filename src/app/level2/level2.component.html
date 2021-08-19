@@ -3,16 +3,10 @@
                 <tr>
                         <td *ngFor="let t of data; let idx = index">
                                 <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
-                                        *ngIf="t.latter !== 'i' && t.latter !== 'j'; else elseBlock;"
                                         style="background-image: url({{t.url}});">
                                         <span class="txt">{{t.latter}}&#8198;</span>
                                 </div>
-                                <ng-template #elseBlock>
-                                        <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
-                                                style="background-image: url({{t.url}});">
-                                                <span class="txts">{{t.latter}}&#8198;</span>
-                                        </div>
-                                </ng-template>
+
                         </td>
                 </tr>
 
@@ -51,7 +45,7 @@
                 <b> &nbsp; &nbsp; Loding data...</b>
         </div>
 
-        <div class="row" style="margin-top: -5%;">
+        <div class="row" style="margin-top: -10%;">
 
                 <div class="col-md-1">
                         <div class="il" *ngIf="index === 0; else elsePrev">

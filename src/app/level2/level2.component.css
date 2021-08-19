@@ -21,11 +21,11 @@
 }
 
 .spell {
-    background-size: 40px 40px;
+    background-size: 75% 100%;
     background-repeat: no-repeat;
     align-items: center;
-    margin: auto 3px auto 3px;
-    font-size: 30px;
+    margin: auto auto auto auto;
+    font-size: 37px;
     display: inline;
 }
 
@@ -39,8 +39,8 @@
 .txts {
     font-size: larger;
     text-align: center;
-    padding-left: 17px;
-    padding-right: 22px;
+    margin-left: 80%;
+    margin-right: 80%;
 }
 
 .underl {
@@ -76,7 +76,7 @@
 }
 
 .loader {
-    margin-top: 15.7%;
+    margin-top: 20%;
 }
 
 .anima {

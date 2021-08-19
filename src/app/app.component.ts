@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  constructor(private _router: Router) { }
+
   wid: number = 0
   mobile = false
+  aboutus = false
   ngOnInit(): void {
 
     setInterval(() => {
@@ -16,7 +20,11 @@ export class AppComponent implements OnInit {
       if (window.screen.width <= 1024) { // 768px portrait
         this.mobile = true;
       }
+
       else {
+
+
+
         this.mobile = false;
       }
     }, 1000)
