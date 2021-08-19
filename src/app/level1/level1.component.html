@@ -32,21 +32,18 @@
             <b> &nbsp; &nbsp; Loding data...</b>
         </div>
 
-
         <div class="ir" *ngIf="index === (demo.length - 1); else elseNext">
         </div>
         <ng-template #elseNext>
-            <div class="ir" (click)="changeSlid(1)"><i class="fas fa-chevron-right is"></i>
+            <div class="ir" (click)="changeSlid(1)">
+                <i class="fas fa-chevron-right is"></i>
             </div>
         </ng-template>
 
     </div>
 
-
-
-
     <div class="back" (click)="goBack()">
-        <img src="../../assets/images/Levels_and_Other_Buttons/Back button.webp" height="60px" alt="" srcset="">
+        <img src="../../assets/images/Levels_and_Other_Buttons/BackButton.webp" height="60px" alt="" srcset="">
     </div>
 
 

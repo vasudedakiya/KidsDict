@@ -7,10 +7,6 @@
     margin-right: 16%;
 }
 
-* {
-    text-transform: uppercase;
-}
-
 .is {
     color: rgb(216, 139, 67);
     font-size: 110px;
@@ -38,6 +34,10 @@
 
 .spell {
     margin-left: 25%;
+    font-family: "roboto";
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
 }
 
 .back {
@@ -46,8 +46,8 @@
 }
 
 .loader {
-    margin-top: 15.4%;
-    margin-bottom: 15.7%;
+    margin-top: 15.8%;
+    margin-bottom: 16%;
 }
 
 .smily {
