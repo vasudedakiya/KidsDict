@@ -37,7 +37,7 @@ ul#main li {
 
 .is {
     color: rgb(216, 139, 67);
-    font-size: 150px;
+    font-size: 1000%;
 }
 
 .il {
@@ -49,19 +49,20 @@ ul#main li {
 
 .ir {
     float: right;
-    margin-top: -21%;
+    margin-top: 8%;
     margin-right: 2%;
 }
 
 .imgs {
     height: 250px;
-    margin-top: 3.3%;
+    margin-top: 5%;
     width: auto;
+    margin-left: 37%;
     float: inline-end;
 }
 
 .back {
-    margin: 8px auto auto .8%;
+    margin: 2% auto auto .8%;
 }
 
 @keyframes runer {
@@ -89,6 +90,6 @@ ul#main li {
 }
 
 .loader {
-    margin-top: 18%;
-    margin-bottom: 18%;
+    margin-top: 19.2%;
+    margin-bottom: 19.2%;
 }

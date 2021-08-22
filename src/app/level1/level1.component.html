@@ -13,7 +13,7 @@
 
 
 
-    <div>
+    <div *ngIf="dataLoad === false">
 
         <div class="il" *ngIf="index === 0; else elsePrev">
         </div>
@@ -22,15 +22,6 @@
             </div>
         </ng-template>
 
-        <div class="" *ngIf="dataLoad === false">
-            <img src="{{imgurl}}" class="img img-fluid rounded mx-auto d-block imgs" alt="">
-        </div>
-
-        <div class="d-flex justify-content-center loader" *ngIf="dataLoad === true">
-            <div class="spinner-border" role="status">
-            </div>
-            <b> &nbsp; &nbsp; Loding data...</b>
-        </div>
 
         <div class="ir" *ngIf="index === (demo.length - 1); else elseNext">
         </div>
@@ -41,6 +32,22 @@
         </ng-template>
 
     </div>
+
+
+
+    <div class="" *ngIf="dataLoad === false">
+        <img src="{{imgurl}}" class="img img-fluid rounded d-block imgs" alt="">
+    </div>
+
+    <div class="d-flex justify-content-center loader" *ngIf="dataLoad === true">
+        <div class="spinner-border" role="status">
+        </div>
+        <b> &nbsp; &nbsp; Loding data...</b>
+    </div>
+
+
+
+
 
     <div class="back" (click)="goBack()">
         <img src="../../assets/images/Levels_and_Other_Buttons/BackButton.webp" height="60px" alt="" srcset="">

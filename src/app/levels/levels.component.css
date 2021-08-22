@@ -27,7 +27,6 @@ div.scrollmenu {
 }
 
 div.scrollmenu a {
-    display: inline-block;
     text-align: center;
     padding: 14px;
     text-decoration: none;
@@ -40,7 +39,7 @@ div.scrollmenu a {
 
 .is {
     color: rgb(216, 139, 67);
-    font-size: 110px;
+    font-size: 1000%;
 }
 
 .il {
@@ -55,7 +54,7 @@ div.scrollmenu a {
 }
 
 .cate {
-    height: 130px;
+    width: 21%;
 }
 
 @keyframes run {
@@ -77,10 +76,11 @@ div.scrollmenu a {
 }
 
 .back {
-    margin: 2% 0px 0px .8%;
+    margin: 2.8% 0px 0px .8%;
 }
 
 .cattxt {
+    width: 60%;
     margin: 2% auto auto 20%;
 }
 
@@ -92,6 +92,6 @@ div.scrollmenu a {
 /* ------loader----------- */
 
 .load {
-    margin-top: 17%;
+    margin-top: 18%;
     margin-bottom: 24%;
 }

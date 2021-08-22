@@ -5,9 +5,8 @@
     </audio>
 
 
-    <div class="cattxt">
-        <img src="../../assets/images/Screen_Background/categories.webp" class="" height="80px" alt="">
-    </div>
+    <img src="../../assets/images/Screen_Background/categories.webp" class="cattxt" height="" alt="">
+
 
 
     <div class="d-flex justify-content-center load" *ngIf="dataLoad === true">
@@ -34,12 +33,10 @@
         </div>
 
 
-        <div class="scrollmenu " #widgetsContent id="scrollmenua">
-
+        <div class="scrollmenu" #widgetsContent id="scrollmenua">
             <a (click)="goCate(c.id)" *ngFor="let c of categorys">
                 <img src="https://kidsdictionary.arjunbala.com/{{c.img}}" class="cate" alt="">
             </a>
-
         </div>
 
     </div>

@@ -15,14 +15,16 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 }
 
 .devloperImg {
+    width: 23%;
     margin: 9% auto auto 8.5%;
 }
 
 .levels {
-    margin: 7% auto auto 3%;
+    margin: 7% auto auto 1%;
 }
 
 .anima {
+    width: 20%;
     animation-name: train;
     animation-duration: 1s;
     animation-iteration-count: infinite;
