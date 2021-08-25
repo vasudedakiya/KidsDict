@@ -62,7 +62,13 @@ ul#main li {
 }
 
 .back {
+    float: left;
     margin: 2% auto auto .8%;
+}
+
+.play {
+    margin: 2% 1.8% auto auto;
+    float: right;
 }
 
 @keyframes runer {
@@ -90,6 +96,6 @@ ul#main li {
 }
 
 .loader {
-    margin-top: 19.2%;
-    margin-bottom: 19.2%;
+    margin-top: 18.2%;
+    margin-bottom: 18.2%;
 }

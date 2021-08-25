@@ -3,6 +3,10 @@
     <div id="centerDiv">
         <ul id="main">
             <li *ngFor="let t of data; let idx = index">
+
+                <!-- <button type="button" id="{{ 'wave' + t.latter + (idx+1) }}"><span
+                        style="background-image: url({{t.url}});">{{t.latter}}</span>&nbsp;</button> -->
+
                 <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}" style="background-image: url({{t.url}});">
                     <span class="txt">{{t.latter}}&nbsp;</span>
                 </div>
@@ -47,10 +51,17 @@
 
 
 
+    <div class="row">
 
+        <div class="col-md-1 back" (click)="goBack()">
+            <img src="././assets/images/Levels_and_Other_Buttons/BackButton.webp" height="60px" alt="" srcset="">
+        </div>
 
-    <div class="back" (click)="goBack()">
-        <img src="../../assets/images/Levels_and_Other_Buttons/BackButton.webp" height="60px" alt="" srcset="">
+        <div class="col-md-9"></div>
+
+        <div class="col-md-1 play" (click)="changeSlid(0)">
+            <img src="../../assets/images/Levels_and_Other_Buttons/Sound button.webp" height="60px" alt="" srcset="">
+        </div>
     </div>
 
 

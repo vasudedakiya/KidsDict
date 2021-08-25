@@ -59,7 +59,7 @@ export class Level3Component implements OnInit {
       var d: HTMLElement | null = document.getElementById('happy')
       d?.classList.add('show');
       let audio = new Audio();
-      audio.src = "../../assets/sound/Sound effect/yuppie.ogg";
+      audio.src = "././assets/sound/Sound effect/yuppie.ogg";
       audio.load();
       audio.play();
       setTimeout(() => {
@@ -86,7 +86,7 @@ export class Level3Component implements OnInit {
       d?.classList.add('show');
 
       let audio = new Audio();
-      audio.src = "../../assets/sound/Sound effect/cartoon_girl_oh_no.ogg";
+      audio.src = "././assets/sound/Sound effect/cartoon_girl_oh_no.ogg";
       audio.load();
       audio.play();
 

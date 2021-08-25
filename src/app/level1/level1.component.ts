@@ -69,6 +69,7 @@ export class Level1Component implements OnInit {
     this._route.navigate(['level', 1])
   }
 
+
   changeSlid(id: any) {
     this.index = this.index + id;
     this.data = [];
@@ -85,7 +86,7 @@ export class Level1Component implements OnInit {
         j = i - 8
       }
       let temp = {
-        url: "../../assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
+        url: "././assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[i],
       }
       this.data.push(temp);

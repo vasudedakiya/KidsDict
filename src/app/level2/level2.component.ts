@@ -76,7 +76,7 @@ export class Level2Component implements OnInit {
         j = i - 8
       }
       let temp = {
-        url: "../../assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
+        url: "././assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[i],
       }
       this.data.push(temp);
@@ -123,7 +123,7 @@ export class Level2Component implements OnInit {
         j = this.count1 - 8
       }
       let temp1 = {
-        url: "../../assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
+        url: "././assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[this.count1]
       }
       this.data[this.count1 - 1] = temp1
@@ -147,7 +147,7 @@ export class Level2Component implements OnInit {
         j = this.count1 - 8
       }
       let temp1 = {
-        url: "../../assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
+        url: "././assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[this.count1]
       }
       this.ansData[this.count1] = temp1;
@@ -156,14 +156,14 @@ export class Level2Component implements OnInit {
       this.data[this.count1] = temp;
       if (this.count1 + 1 < this.demo[this.index].latter.length) {
         let audio = new Audio();
-        audio.src = "../../assets/sound/Sound effect/sound_keyboard_right.ogg";
+        audio.src = "././assets/sound/Sound effect/sound_keyboard_right.ogg";
         audio.load();
         audio.play();
       }
       this.count1 += 1
       if (this.count1 == this.demo[this.index].latter.length) {
         let audio = new Audio();
-        audio.src = "../../assets/sound/Sound effect/yuppie.ogg";
+        audio.src = "././assets/sound/Sound effect/yuppie.ogg";
         audio.load();
         audio.play();
         if (this.index < this.demo.length - 1) {
@@ -183,7 +183,7 @@ export class Level2Component implements OnInit {
 
     else {
       let audio = new Audio();
-      audio.src = "../../assets/sound/Sound effect/sound_keyboard_wrong.ogg";
+      audio.src = "././assets/sound/Sound effect/sound_keyboard_wrong.ogg";
       audio.load();
       audio.play();
     }
