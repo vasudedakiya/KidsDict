@@ -10,9 +10,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private _router: Router) { }
 
+  playSoud = true;
   wid: number = 0
   mobile = false
   ngOnInit(): void {
+    this.playSoud = true;
 
     setInterval(() => {
       this.wid = window.screen.width;

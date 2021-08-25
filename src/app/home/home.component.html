@@ -1,6 +1,6 @@
 <div *ngIf="mobile===false">
 
-    <audio autoplay loop>
+    <audio autoplay loop *ngIf="playSoud === true">
         <source src="././assets/sound/Sound effect/dashboard_sound.ogg" type="audio/ogg">
     </audio>
     <div class="bg">
