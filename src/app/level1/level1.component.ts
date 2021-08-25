@@ -61,7 +61,7 @@ export class Level1Component implements OnInit {
 
   dataSD() {
     this.displaydata();
-    this.speak();
+    // this.speak();
   }
 
   // ============================display data methods=====================
@@ -94,6 +94,7 @@ export class Level1Component implements OnInit {
     this.imgurl = this.demo[this.index].url;
     this.text = this.demo[this.index].latter;
     this.word = (this.demo[this.index].name);
+    this.speak();
   }
 
   playAnima(late: any) {
