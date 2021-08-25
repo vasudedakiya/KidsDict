@@ -49,7 +49,18 @@ export class Level4Component implements OnInit {
     this.displaydata();
   }
 
+  removeEventLisntner() {
+    window.removeEventListener('keydown', (event: KeyboardEvent) => {
+      const keycode = event.keyCode || event.which;
+      let temp: string = String.fromCharCode(keycode);
+      if (keycode >= 65 && keycode <= 90) {
+        this.appendLatter(temp.toLowerCase());
+      }
+    });
+  }
+
   goBack() {
+    this.removeEventLisntner();
     this._route.navigate(['level', 4])
   }
 
@@ -83,6 +94,7 @@ export class Level4Component implements OnInit {
   }
 
   goHome() {
+    this.removeEventLisntner();
     this._route.navigate([''])
   }
 

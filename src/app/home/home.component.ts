@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
         this.mobile = true;
       }
       else {
+        this.playSoud = true;
         this.mobile = false;
       }
     }, 1000)
