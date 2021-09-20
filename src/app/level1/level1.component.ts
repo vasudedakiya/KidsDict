@@ -53,8 +53,8 @@ export class Level1Component implements OnInit {
         var temp = { name: res.data[i].name, latter: temp1.split(''), url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img }
         this.demo.push(temp);
       }
-      this.dataLoad = false;
       this.dataSD();
+      this.dataLoad = false;
     });
 
   }
