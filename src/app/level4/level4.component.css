@@ -16,10 +16,6 @@
     width: auto;
 }
 
-ul#main li {
-    display: inline;
-}
-
 .spell {
     background-size: 80% 100%;
     background-repeat: no-repeat;
@@ -46,7 +42,7 @@ ul#main li {
 }
 
 .underl {
-    border-bottom: 2px solid white;
+    border-top: 2px solid white;
 }
 
 .il {

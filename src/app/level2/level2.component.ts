@@ -125,6 +125,18 @@ export class Level2Component implements OnInit {
   appendLatter(lat: string) {
 
 
+    let audioRight = new Audio();
+    audioRight.src = "././assets/sound/Sound effect/sound_keyboard_right.ogg";
+    audioRight.load();
+
+    let audioYuppy = new Audio();
+    audioYuppy.src = "././assets/sound/Sound effect/yuppie.ogg";
+    audioYuppy.load();
+
+    let audioWrong = new Audio();
+    audioWrong.src = "././assets/sound/Sound effect/sound_keyboard_wrong.ogg";
+    audioWrong.load();
+
     if (lat === 'Backspace' && this.count1 !== 0) {
       let j = 0;
       if (this.count1 < 8) {
@@ -150,6 +162,11 @@ export class Level2Component implements OnInit {
 
     else if (this.count1 < this.demo[this.index].latter.length && lat === this.demo[this.index].latter[this.count1].toLocaleLowerCase()) {
 
+
+
+
+
+
       let j = 0;
       if (this.count1 < 8) {
         j = this.count1
@@ -166,17 +183,17 @@ export class Level2Component implements OnInit {
       let temp = { url: "", latter: '\xa0\xa0' }
       this.data[this.count1] = temp;
       if (this.count1 + 1 < this.demo[this.index].latter.length) {
-        let audio = new Audio();
-        audio.src = "././assets/sound/Sound effect/sound_keyboard_right.ogg";
-        audio.load();
-        audio.play();
+        // let audio = new Audio();
+        // audio.src = "././assets/sound/Sound effect/sound_keyboard_right.ogg";
+        // audioRight.load();
+        audioRight.play();
       }
       this.count1 += 1
       if (this.count1 == this.demo[this.index].latter.length) {
-        let audio = new Audio();
-        audio.src = "././assets/sound/Sound effect/yuppie.ogg";
-        audio.load();
-        audio.play();
+        // let audio = new Audio();
+        // audio.src = "././assets/sound/Sound effect/yuppie.ogg";
+        // audio.load();
+        audioYuppy.play();
         if (this.index < this.demo.length - 1) {
           setTimeout(() => {
             this.changeSlid(1);
@@ -193,10 +210,7 @@ export class Level2Component implements OnInit {
     }
 
     else {
-      let audio = new Audio();
-      audio.src = "././assets/sound/Sound effect/sound_keyboard_wrong.ogg";
-      audio.load();
-      audio.play();
+      audioWrong.play();
     }
 
 

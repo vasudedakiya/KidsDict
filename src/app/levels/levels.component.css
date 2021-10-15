@@ -1,7 +1,7 @@
 .bg {
     background-image: url(../../assets/images/Screen_Background/Categories-Screen-background.webp);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 80vh;
     margin-left: 16%;
     margin-right: 16%;
 }
@@ -92,6 +92,6 @@ div.scrollmenu a {
 /* ------loader----------- */
 
 .load {
-    margin-top: 18.5%;
+    margin-top: 17.5%;
     margin-bottom: 24%;
 }

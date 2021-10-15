@@ -1,19 +1,30 @@
 <div class="bg" (keyup)="onKey($event)">
 
-        <table id="centerDiv" class="pt-1">
+        <table id="centerDiv">
+                <tr>
+                        <td *ngFor="let t of data; let idx = index">
+                                <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}">
+                                        <span class="txt">&nbsp;</span>
+                                </div>
 
-                <tr style="position: relative;">
+                        </td>
+                </tr>
+
+                <tr style="top: -15%;position: relative;">
                         <td *ngFor="let t of ansData; let idx = index">
                                 <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
                                         style="background-image: url({{t.url}});">
                                         <span class="txt">{{t.latter}}&nbsp;</span>
                                 </div>
+
                         </td>
+
                 </tr>
 
                 <tr style="top: -45%;position: relative;">
                         <td *ngFor="let t of data; let idx = index">
-                                <div class="spell underl pl-1 pr-1" id="{{ 'wave' + t.latter + (idx+1) }}">
+                                <div class="spell underl" id="{{ 'wave' + t.latter + (idx+1) }}"
+                                        style="padding-right: 2%;">
                                         <span class="txt">&nbsp;&#8198;</span>
                                 </div>
                         </td>
@@ -26,7 +37,7 @@
                 <b> &nbsp; &nbsp; Loding data...</b>
         </div>
 
-        <div class="row" style="margin-top: -1%;">
+        <div class="row" style="justify-content: space-between;">
 
                 <div class="col-md-1">
                         <div class="il" *ngIf="index === 0; else elsePrev">
@@ -36,14 +47,12 @@
                                 </div>
                         </ng-template>
                 </div>
-                <div class="col-md-1"></div>
 
                 <div class="col-md-2">
                         <img src="././assets/images/Keyboard/Home.webp" (click)="goHome()"
                                 class="img img-fluid rounded mx-auto d-block kbhh" alt="">
                 </div>
 
-                <div class="col-md-1"></div>
 
                 <div class="col-md-2">
                         <div class="">
@@ -51,13 +60,12 @@
                         </div>
                 </div>
 
-                <div class="col-md-1"></div>
+
 
                 <div class="col-md-2">
                         <img src="././assets/images/Keyboard/Help.webp" (click)="help()"
                                 class="img img-fluid rounded mx-auto d-block kbhh" alt="">
                 </div>
-                <div class="col-md-1"></div>
 
 
                 <div class="col-md-1">
