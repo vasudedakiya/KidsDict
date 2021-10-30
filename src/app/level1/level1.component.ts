@@ -19,6 +19,7 @@ export class Level1Component implements OnInit {
   count = 0;
   id: number = 0;
   dataLoad = true;
+  timeouts: NodeJS.Timeout[] = [];
 
 
   constructor(private _route: Router, private _activeRoute: ActivatedRoute, private _api: ApiKidsDictService) {
@@ -36,22 +37,32 @@ export class Level1Component implements OnInit {
   imgurl: string = ""
   data: { url: string, latter: string }[] = []
 
-  ngOnInit(): void {
-    this.id = this._activeRoute.snapshot.params.id
 
-    speechSynthesis.addEventListener(
-      "voiceschanged",
+  ngOnInit(): void {
+    this.id = this._activeRoute.snapshot.params.id;
+    // var message = alert("Warning");
+    // document.getElementById('SoundButton')?.click();
+
+    speechSynthesis.addEventListener("voiceschanged",
       () => {
+
         this.voices = speechSynthesis.getVoices();
         this.selectedVoice = (this.voices[4]);
+        console.log("load");
       }
+
+
     );
 
     this._api.getCatData(this.id).subscribe((res: any) => {
       for (let i = 0; i < res.data.length; i++) {
         var temp1 = res.data[i].name;
+
+
         var temp = { name: res.data[i].name, latter: temp1.split(''), url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img }
         this.demo.push(temp);
+
+
       }
       this.dataSD();
       this.dataLoad = false;
@@ -71,13 +82,19 @@ export class Level1Component implements OnInit {
 
 
   changeSlid(id: any) {
+    this.timeouts.forEach(e => {
+      clearTimeout(e)
+    });
+    this.timeouts.splice(0, this.timeouts.length);
     this.index = this.index + id;
     this.data = [];
     this.dataSD();
   }
 
   displaydata() {
+
     for (let i = 0; i < this.demo[this.index].latter.length; i++) {
+
       let j = 0;
       if (i < 8) {
         j = i
@@ -89,7 +106,11 @@ export class Level1Component implements OnInit {
         url: "././assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[i],
       }
-      this.data.push(temp);
+      if (temp.latter !== " ") {
+
+        this.data.push(temp);
+      }
+
     }
     this.imgurl = this.demo[this.index].url;
     this.text = this.demo[this.index].latter;
@@ -120,17 +141,27 @@ export class Level1Component implements OnInit {
 
   synthesizeSpeechFromText(voice: SpeechSynthesisVoice, rate: number, text: string[], word: string) {
     this.count = 0;
+
+
+
+
     for (let i = 0; i < this.demo[this.index].latter.length; i++) {
-      setTimeout(() => {
-        this.count++
+      let id: NodeJS.Timeout;
+      id = setTimeout(() => {
+        this.count++;
+        console.log(text[i]);
+
         this.playAnima(text[i]);
       }, i * 1300);
+      this.timeouts.push(id);
 
       var utterance = new SpeechSynthesisUtterance(text[i]);
       utterance.voice = this.selectedVoice;
       utterance.rate = rate;
       speechSynthesis.speak(utterance);
     }
+
+
     var utterance = new SpeechSynthesisUtterance(word);
     utterance.voice = this.selectedVoice;
     utterance.rate = rate;

@@ -1,102 +1,51 @@
-<div class="bg"><br>
+<div class="bg">
 
-    <audio autoplay loop>
+
+    <audio autoplay loop *ngIf="playSoud === true">
         <source src="././assets/sound/Sound effect/dashboard_sound.ogg" type="audio/ogg">
     </audio>
 
-
-    <img src="././assets/images/Screen_Background/categories.webp" class="cattxt" height="" alt="">
-
-
-
-    <div class="d-flex justify-content-center load" *ngIf="dataLoad === true">
-        <div class="spinner-border text-info" role="status">
-            <span class="sr-only">Loading...</span>
+    <div class="jscon cattext">
+        <div>&nbsp;</div>
+        <div><img src="././assets/images/Screen_Background/categories.webp" class="img-responsive" height="80vh"
+                width="" alt="">
         </div>
+        <div>&nbsp;</div>
     </div>
 
 
-    <div style="margin-top: 14.5%;">
+    <div class="jscon catlist">
 
-        <div class="row ra" *ngIf="dataLoad === false">
-            <div class="col-md-2" (click)="scrollLeft()">
-                <div class="il">
-                    <i class="fas fa-chevron-left is"></i>
-                </div>
-            </div>
+        <div (click)="scrollLeft()">
+            <i class="fas fa-chevron-left is "></i>
+        </div>
 
-            <div class="col-md-2" style="margin-left: 65%;">
-                <div class="ir" (click)="scrollRight()">
-                    <i class="fas fa-chevron-right is"></i>
-                </div>
+        <div class="d-flex justify-content-center load" *ngIf="dataLoad === true">
+            <div class="spinner-border text-info" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
 
+        <div *ngIf="dataLoad === false">
+            <div class="scrollmenu" #widgetsContent id="scrollmenua">
+                <a (click)="goCate(c.id)" *ngFor="let c of categorys">
+                    <img src="https://kidsdictionary.arjunbala.com/{{c.img}}" class="cate mr-3" alt="">
+                </a>
+            </div>
+        </div>
 
-        <div class="scrollmenu" #widgetsContent id="scrollmenua">
-            <a (click)="goCate(c.id)" *ngFor="let c of categorys">
-                <img src="https://kidsdictionary.arjunbala.com/{{c.img}}" class="cate" alt="">
-            </a>
+        <div (click)="scrollRight()">
+            <i class="fas fa-chevron-right is"></i>
         </div>
 
     </div>
 
 
-    <!-- <table >
-        <tr>
-
-            <td>
-                <section class="scrollmenu" style="width: 40%;" id="scrollmenua">
-
-                    <a (click)="goCate(c.id)" *ngFor="let c of categorys">
-                        <img src="https://kidsdictionary.arjunbala.com/{{c.img}}" class="cate" alt="">
-                    </a>
-                </section>
-            </td>
-
-        </tr>
-    </table> -->
-
-
-    <!-- For Offline Work -->
-
-
-    <!-- <div class="scrollmenu " id="scrollmenua">
-        <a (click)="goCate(1)">
-            <img src="././assets/images/Category/Alphabets.webp" class="cate" alt="">
-        </a>
-        <a (click)="goCate(2)">
-            <img src="././assets/images/Category/Birds.webp" class="cate" alt="">
-        </a>
-        <a (click)="goCate(3)">
-            <img src="././assets/images/Category/BodyParts.webp" class="cate" alt="">
-        </a>
-        <a (click)="goCate(4)">
-            <img src="././assets/images/Category/Colors.webp" class="cate" alt="">
-        </a>
-        <a (click)="goCate(5)">
-            <img src="././assets/images/Category/Days.webp" class="cate" alt="">
-        </a>
-        <a (click)="goCate(6)">
-            <img src="././assets/images/Category/DomesticAnimals.webp" class="cate" alt="">
-        </a>
-        <a (click)="goCate(7)">
-            <img src="././assets/images/Category/Flowers.webp" class="cate" alt="">
-        </a>
-        <a (click)="goCate(8)">
-            <img src="././assets/images/Category/WildAnimals.webp" class="cate" alt="">
-        </a>
-    </div> -->
-
-
-
-    <!-- ---------------------- -->
-
-
-    <div class="back" (click)="goBack()">
-        <img src="././assets/images/Levels_and_Other_Buttons/BackButton.webp" height="60px" alt="" srcset="">
+    <div class="row back">
+        <div class="col-xl-1" (click)="goBack()">
+            <img src="././assets/images/Levels_and_Other_Buttons/BackButton.webp" height="60px" alt="" srcset="">
+        </div>
+        <div class="col-xl-11"></div>
     </div>
-
-
 
 </div>

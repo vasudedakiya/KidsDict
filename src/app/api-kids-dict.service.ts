@@ -43,18 +43,35 @@ export class ApiKidsDictService {
     return this._http.get(this.apiUrlCateData + id, httpOptions)
   }
 
-  postMail(contactForm: NgForm) {
-    if (contactForm.valid) {
-      let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      let email = contactForm.value;
-      this._http.post('https://formspree.io/f/mjvjalpz',
-        { name: email.name, replyto: email.email, message: email.messages },
-        { 'headers': headers }).subscribe(function (response: any) {
-          console.log(response);
-        }
-        );
-    }
+  // -----------------------------------------------------------------------
+
+  recierEmail = "vasudedakiya3@gmail.com";
+  LoginApi = "http://emailapi.arjunbala.com/api/login";
+  mailSendApi = "http://emailapi.arjunbala.com/api/sendemail";
+  loginToken: [] = [];
+
+  requestLogin() {
+    let temp = { email: "190540107043@darshan.ac.in", password: "11222117" };
+    return this._http.post(this.LoginApi, { email: temp.email, password: temp.password });
   }
 
 
+  sendMail(contactForm: NgForm, token: any) {
+
+    var headers_object = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer " + token
+    })
+
+    const httpOptions = {
+      headers: headers_object
+    };
+    let temp = contactForm.value;
+    let postData = { name: temp.name, email: temp.email, subject: temp.subject, phonenumber: temp.number, message: temp.messages, appname: "Kids Dictonary", receiveremail: this.recierEmail }
+
+    console.log(postData);
+
+    return this._http.post(this.mailSendApi, postData, httpOptions);
+
+  }
 }

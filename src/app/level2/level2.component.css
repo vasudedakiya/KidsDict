@@ -2,12 +2,12 @@
     background-image: url(../../assets/images/Screen_Background/Level-2-background.webp);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-left: 16%;
-    margin-right: 16%;
+    min-height: 70vh !important;
 }
 
 .back {
-    margin: -50px auto auto -5px;
+    position: absolute;
+    bottom: 1%;
 }
 
 #centerDiv {
@@ -28,8 +28,8 @@
 .txt {
     text-align: center;
     padding-left: 10px;
-    padding-right: 10px;
-    font-family: "roboto";
+    padding-right: 20px;
+    font-family: monospace;
     font-weight: bold;
     color: white;
     text-transform: uppercase;
@@ -37,9 +37,9 @@
 
 .txts {
     text-align: center;
-    margin-left: 80%;
-    margin-right: 80%;
-    font-family: "roboto";
+    padding-left: 10px;
+    padding-right: 13px;
+    font-family: monospace;
     font-weight: bold;
     color: white;
     text-transform: uppercase;
@@ -83,24 +83,37 @@
 
 .anima {
     animation-name: runer;
-    animation-duration: 1s;
+    animation-duration: .5s;
     animation-iteration-count: 1;
 }
 
 @keyframes runer {
     0% {
-        opacity: 1;
+        -webkit-transform: none;
+        transform: none
     }
-    25% {
-        opacity: .5
+    15% {
+        -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg)
     }
-    50% {
-        opacity: 1;
+    30% {
+        -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg)
+    }
+    45% {
+        -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)
+    }
+    60% {
+        -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)
     }
     75% {
-        opacity: .5;
+        -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)
     }
     100% {
-        opacity: 1;
+        -webkit-transform: none;
+        transform: none
     }
 }

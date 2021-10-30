@@ -2,8 +2,14 @@
     background-image: url(../../assets/images/Screen_Background/Level-1-screen-background.webp);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-left: 15.5%;
-    margin-right: 15.5%;
+    min-height: 70vh !important;
+}
+
+.jscon {
+    padding-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .spell {
@@ -18,21 +24,19 @@
 .txt {
     text-align: center;
     padding-left: 10px;
-    padding-right: 10px;
-    font-family: "roboto";
+    padding-right: 20px;
+    font-family: monospace;
     font-weight: bold;
     color: white;
     text-transform: uppercase;
 }
 
-div#centerDiv {
-    width: 100%;
-    text-align: center;
-    margin-left: -2%;
-}
-
 ul#main li {
     display: inline;
+}
+
+#main {
+    margin-left: -4%;
 }
 
 .is {
@@ -40,35 +44,8 @@ ul#main li {
     font-size: 1000%;
 }
 
-.il {
-    float: left;
-    margin-top: 8%;
-    margin-left: 2%;
-    margin-right: -10%;
-}
-
-.ir {
-    float: right;
-    margin-top: 8%;
-    margin-right: 2%;
-}
-
 .imgs {
-    height: 250px;
-    margin-top: 5%;
-    width: auto;
-    margin-left: 37%;
-    float: inline-end;
-}
-
-.back {
-    float: left;
-    margin: 2% auto auto .8%;
-}
-
-.play {
-    margin: 2% 1.8% auto auto;
-    float: right;
+    width: 70%;
 }
 
 @keyframes runer {
@@ -95,7 +72,23 @@ ul#main li {
     animation-iteration-count: 1;
 }
 
-.loader {
-    margin-top: 18.2%;
-    margin-bottom: 18.2%;
+.back {
+    position: absolute;
+    bottom: 1%;
+    left: 1.5%;
+}
+
+.sound {
+    position: absolute;
+    bottom: 1%;
+    right: 1.5%;
+}
+
+.middiv {
+    margin-top: 8%;
+}
+
+.loder {
+    margin-left: 47%;
+    margin-top: 10%;
 }

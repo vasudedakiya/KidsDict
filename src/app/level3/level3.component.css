@@ -3,8 +3,7 @@
     background-color: black;
     /* background-repeat: no-repeat; */
     background-size: 100% 100%;
-    margin-left: 16%;
-    margin-right: 16%;
+    min-height: 70vh !important;
 }
 
 .is {
@@ -33,7 +32,8 @@
 }
 
 .spell {
-    margin-left: 25%;
+    margin-left: 60px;
+    font-size: 30px;
     font-family: "roboto";
     font-weight: bold;
     color: white;
@@ -41,8 +41,9 @@
 }
 
 .back {
-    margin-top: -3%;
-    margin-left: -.5%;
+    position: absolute;
+    bottom: 1%;
+    left: 1.5%;
 }
 
 .loader {
@@ -62,3 +63,5 @@
 .show {
     display: block;
 }
+
+.mcq {}

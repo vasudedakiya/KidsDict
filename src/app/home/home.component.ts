@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
     setInterval(() => {
       this.wid = window.screen.width;
-      if (window.screen.width <= 1244) { // 768px portrait
+      if (window.screen.width <= 860) { // 768px portrait
         this.mobile = true;
       }
       else {

@@ -1,31 +1,32 @@
 <div class="bg" (keyup)="onKey($event)">
+
         <table id="centerDiv">
                 <tr>
                         <td *ngFor="let t of data; let idx = index">
                                 <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
                                         style="background-image: url({{t.url}});">
-                                        <span class="txt">{{t.latter}}&nbsp;</span>
+                                        <span class="txt">{{t.latter}}</span>
                                 </div>
 
                         </td>
                 </tr>
 
-                <tr style="top: -15%;position: relative;">
+                <tr>
                         <td *ngFor="let t of ansData; let idx = index">
                                 <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}"
                                         style="background-image: url({{t.url}});">
-                                        <span class="txt">{{t.latter}}&nbsp;</span>
+                                        <span class="txt">{{t.latter}}</span>
                                 </div>
 
                         </td>
 
                 </tr>
 
-                <tr style="top: -45%;position: relative;">
+                <tr style="">
                         <td *ngFor="let t of data; let idx = index">
                                 <div class="spell underl" id="{{ 'wave' + t.latter + (idx+1) }}"
                                         style="padding-right: 2%;">
-                                        <span class="txt">&nbsp;&#8198;</span>
+                                        <span class="txts">&nbsp;</span>
                                 </div>
                         </td>
                 </tr>

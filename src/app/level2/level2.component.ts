@@ -28,7 +28,7 @@ export class Level2Component implements OnInit {
     this._api.getCatData(this.id).subscribe((res: any) => {
       for (let i = 0; i < res.data.length; i++) {
         var temp1 = res.data[i].name;
-        var temp = { name: res.data[i].name, latter: temp1.split(''), url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img };
+        var temp = { name: res.data[i].name, latter: temp1.replace(/\s/g, "").split(''), url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img };
         this.demo.push(temp);
       }
       this.dataLoad = false;
@@ -88,11 +88,13 @@ export class Level2Component implements OnInit {
         url: "././assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[i],
       }
+
+
       this.data.push(temp);
-      let temp1 = {
-        url: "", latter: '\xa0\xa0'
-      }
+      let temp1 = { url: "", latter: '\xa0\xa0' }
       this.ansData.push(temp1)
+
+
     }
     this.imgurl = this.demo[this.index].url;
   }
@@ -149,8 +151,10 @@ export class Level2Component implements OnInit {
         url: "././assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
         latter: this.demo[this.index].latter[this.count1]
       }
+
       this.data[this.count1 - 1] = temp1
-      let temp = { url: "", latter: '\xa0\xa0' }
+      let temp = { url: "", latter: '\xa0' }
+
       this.ansData[this.count1 - 1] = temp;
       this.count1 -= 1
     }
@@ -160,11 +164,10 @@ export class Level2Component implements OnInit {
     }
 
 
+
+
+
     else if (this.count1 < this.demo[this.index].latter.length && lat === this.demo[this.index].latter[this.count1].toLocaleLowerCase()) {
-
-
-
-
 
 
       let j = 0;

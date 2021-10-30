@@ -1,68 +1,58 @@
 <div class="bg">
-    \
-    <div id="centerDiv">
-        <ul id="main">
-            <li *ngFor="let t of data; let idx = index">
 
-                <!-- <button type="button" id="{{ 'wave' + t.latter + (idx+1) }}"><span
-                        style="background-image: url({{t.url}});">{{t.latter}}</span>&nbsp;</button> -->
 
-                <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}" style="background-image: url({{t.url}});">
-                    <span class="txt">{{t.latter}}&nbsp;</span>
+    <div class="jscon">
+        <div>&nbsp;</div>
+        <div>
+            <ul id="main">
+                <li *ngFor="let t of data; let idx = index">
+                    <div class="spell" id="{{ 'wave' + t.latter + (idx+1) }}" style="background-image: url({{t.url}});">
+                        <span class="txt">{{t.latter}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>&nbsp;</div>
+    </div>
+
+    <div class="row middiv" *ngIf="dataLoad === true">
+        <div class="spinner-border text-info loder" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div class="row middiv" *ngIf="dataLoad === false">
+        <div class="col-xl-4">
+            <div class="" *ngIf="index === 0; else elsePrev"></div>
+            <ng-template #elsePrev>
+                <div (click)="changeSlid(-1)"><i class="fas fa-chevron-left is" style="float: left;"></i>
                 </div>
-
-            </li>
-        </ul>
-    </div>
-
-
-
-    <div *ngIf="dataLoad === false">
-
-        <div class="il" *ngIf="index === 0; else elsePrev">
+            </ng-template>
         </div>
-        <ng-template #elsePrev>
-            <div class="il" (click)="changeSlid(-1)"><i class="fas fa-chevron-left is"></i>
-            </div>
-        </ng-template>
 
-
-        <div class="ir" *ngIf="index === (demo.length - 1); else elseNext">
+        <div class="col-xl-4" style="display: flex; justify-content: center;">
+            <img src="{{imgurl}}" class="imgs" alt="">
         </div>
-        <ng-template #elseNext>
-            <div class="ir" (click)="changeSlid(1)">
-                <i class="fas fa-chevron-right is"></i>
-            </div>
-        </ng-template>
 
-    </div>
-
-
-
-    <div class="" *ngIf="dataLoad === false">
-        <img src="{{imgurl}}" class="img img-fluid rounded d-block imgs" alt="">
-    </div>
-
-    <div class="d-flex justify-content-center loader" *ngIf="dataLoad === true">
-        <div class="spinner-border" role="status">
+        <div class="col-xl-4">
+            <div class="" *ngIf="index === (demo.length - 1); else elseNext"></div>
+            <ng-template #elseNext>
+                <div class="" (click)="changeSlid(1)">
+                    <i class="fas fa-chevron-right is" style="float: right;"></i>
+                </div>
+            </ng-template>
         </div>
-        <b> &nbsp; &nbsp; Loding data...</b>
     </div>
 
 
-
-    <div class="row">
-
-        <div class="col-md-1 back" (click)="goBack()">
+    <div class="jscon ">
+        <div (click)="goBack()" class="back">
             <img src="././assets/images/Levels_and_Other_Buttons/BackButton.webp" height="60px" alt="" srcset="">
         </div>
-
-        <div class="col-md-9"></div>
-
-        <div class="col-md-1 play" (click)="changeSlid(0)">
+        <div></div>
+        <div (click)="changeSlid(0)" id="SoundButton" class="sound">
             <img src="././assets/images/Levels_and_Other_Buttons/Sound button.webp" height="60px" alt="" srcset="">
         </div>
     </div>
-
 
 </div>

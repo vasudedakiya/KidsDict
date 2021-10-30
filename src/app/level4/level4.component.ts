@@ -28,8 +28,10 @@ export class Level4Component implements OnInit {
     this._api.getCatData(this.id).subscribe((res: any) => {
       for (let i = 0; i < res.data.length; i++) {
         var temp1 = res.data[i].name;
-        var temp = { name: res.data[i].name, latter: temp1.split(''), url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img };
+        var temp = { name: res.data[i].name, latter: temp1.replace(/\s/g, "").split(''), url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img };
         this.demo.push(temp);
+        console.log(temp);
+
       }
       this.dataLoad = false;
       this.dataS();
@@ -87,8 +89,10 @@ export class Level4Component implements OnInit {
         latter: this.demo[this.index].latter[i],
       }
       this.data.push(temp);
-      let temp1 = { url: "", latter: '\xa0\xa0' }
+      let temp1 = { url: "", latter: '\xa0' }
       this.ansData.push(temp1)
+
+
     }
     this.imgurl = this.demo[this.index].url;
   }
@@ -133,6 +137,9 @@ export class Level4Component implements OnInit {
 
     if (lat === 'Backspace' && this.count1 !== 0) {
 
+      console.log("runn1");
+
+
       let j = 0;
       if (this.count1 < 8) {
         j = this.count1
@@ -151,12 +158,13 @@ export class Level4Component implements OnInit {
     }
 
     else if (lat === 'Erasor') {
+      console.log("runn1");
+
       this.changeSlid(0);
     }
 
-
-
     else if (this.count1 < this.demo[this.index].latter.length && lat === this.demo[this.index].latter[this.count1].toLocaleLowerCase()) {
+      console.log("run2");
 
       let j = 0;
       if (this.count1 < 8) {
@@ -200,6 +208,8 @@ export class Level4Component implements OnInit {
     }
 
     else {
+      console.log("rnn3");
+
       // let audio = new Audio();
       // audio.src = "././assets/sound/Sound effect/sound_keyboard_wrong.ogg";
       // audio.load();
