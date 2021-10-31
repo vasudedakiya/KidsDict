@@ -30,6 +30,19 @@ export class Level3Component implements OnInit {
       this.dataLoad = false;
       this.dataS();
     });
+
+    window.addEventListener('keydown', (event: KeyboardEvent) => {
+      const keycode = event.keyCode || event.which;
+      let temp: string = String.fromCharCode(keycode);
+
+      if (keycode == 39 && this.index + 1 != this.demo.length) {
+        this.changeSlid(1);
+      }
+      if (keycode == 37 && this.index > 0) {
+        this.changeSlid(-1);
+      }
+
+    });
   }
 
   dataS() {
@@ -43,6 +56,8 @@ export class Level3Component implements OnInit {
   }
 
   changeSlid(id: any) {
+    console.log("runn");
+
     this.index = this.index + id;
     this.spellings = []
     this.dataS();

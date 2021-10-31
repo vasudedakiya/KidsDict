@@ -1,15 +1,19 @@
-.bg {
-    /* background-image: url(../../assets/images/Screen_Background/Level-3-screen-background.webp); */
+/* .bg {
     background-color: black;
-    /* background-repeat: no-repeat; */
     background-size: 100% 100%;
     min-height: 70vh !important;
-}
+} */
 
 .is {
     color: rgb(216, 139, 67);
-    font-size: 110px;
+    font-size: 10vw;
 }
+
+/* .jscon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
 
 .slidbtn {
     margin-top: 15%;
@@ -20,7 +24,8 @@
 }
 
 .optios {
-    background-size: 300px 60px;
+    background-size: 100% 100%;
+    min-width: 20vw;
     background-repeat: no-repeat;
     align-items: center;
     font-size: 35px;
@@ -32,8 +37,9 @@
 }
 
 .spell {
-    margin-left: 60px;
-    font-size: 30px;
+    margin-left: 5vw;
+    font-size: 6vh;
+    margin-right: 1vw;
     font-family: "roboto";
     font-weight: bold;
     color: white;
@@ -57,11 +63,33 @@
 }
 
 .hide {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
 }
 
 .show {
-    display: block;
+    visibility: visible;
+    /* display: block; */
 }
 
-.mcq {}
+.mcq {
+    margin-left: 5%;
+}
+
+/* ------------------------------------------------------ */
+
+.bg {
+    background-color: black;
+    background-size: 100% 100%;
+    min-height: 70vh !important;
+}
+
+.jscon {
+    display: flex;
+    justify-content: center;
+}
+
+.img-fluid {
+    min-height: 100px;
+    max-height: 350px;
+}

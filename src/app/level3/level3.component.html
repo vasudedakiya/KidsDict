@@ -1,4 +1,52 @@
-<div class="bg">
+<!-- <div class="bg">
+
+
+    <div class="jscon">
+        <div class="slidbtn">
+            <div class="il" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left is"></i>
+            </div>
+            <ng-template #elsePrev>
+                <div class="il" (click)="changeSlid(-1)"><i class="fas fa-chevron-left is"></i>
+                </div>
+            </ng-template>
+        </div>
+
+        <div class="">
+            <div>
+                <img src="././assets/images/Smile/Level-3-Happy face.webp" class="hide" id="happy" height="200vh" alt=""
+                    srcset="">
+            </div>
+        </div>
+
+        <div class="imgmid" *ngIf="dataLoad === false">
+            <div class="">
+                <img src="{{imgurl}}" style="min-height: 100px;" class="img img-fluid rounded mx-auto d-block" alt="">
+            </div>
+        </div>
+        <div class="imgmid loader" *ngIf="dataLoad === true">
+            <div class="d-flex justify-content-center text-light loader">
+                <div class="spinner-border" role="status">
+                </div>
+                <b> &nbsp; &nbsp; Loding data...</b>
+            </div>
+        </div>
+
+        <div class="">
+            <div class="smily">
+                <img src="././assets/images/Smile/Level-3-Sad face.webp" class="hide" id="sed" height="200vh" alt=""
+                    srcset="">
+            </div>
+        </div>
+
+        <div class="slidbtn">
+            <div class="ir" *ngIf="index === (demo.length - 1); else elseNext"><i class="fas fa-chevron-right is"></i>
+            </div>
+            <ng-template #elseNext>
+                <div class="ir" (click)="changeSlid(1)"><i class="fas fa-chevron-right is"></i></div>
+            </ng-template>
+        </div>
+    </div>
+
 
 
     <div class="row pt-4 pb-md-4">
@@ -93,5 +141,104 @@
     <div class="col-md-1 back" (click)="goBack()">
         <img src="././assets/images/Levels_and_Other_Buttons/BackButton.webp" height="60px" alt="" srcset="">
     </div>
+
+</div> -->
+
+
+<div class="bg" (keyup)="onKey($event)">
+
+    <!-- <div class="jscon">
+        <div>
+            <img src="././assets/images/Smile/Level-3-Happy face.webp" class="hide img-fluid" id="happy" alt=""
+                srcset="">
+        </div>
+
+        <div *ngIf="dataLoad === false">
+            <img src="{{imgurl}}" class="img img-fluid rounded mx-auto d-block" alt="">
+        </div>
+        <div class="" *ngIf="dataLoad === true">
+            <div class="d-flex justify-content-center text-light loader">
+                <div class="spinner-border" role="status">
+                </div>
+                <b> &nbsp; &nbsp; Loding data...</b>
+            </div>
+        </div>
+
+        <div>
+            <img src="././assets/images/Smile/Level-3-Sad face.webp" class="hide img-fluid" id="sed" alt="" srcset="">
+        </div>
+    </div> -->
+
+
+
+
+    <div style="padding-top: 20%;">
+        <div style="float: left;">
+            <div class="il" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left is"></i></div>
+            <ng-template #elsePrev>
+                <div class="il" (click)="changeSlid(-1)"><i class="fas fa-chevron-left is"></i></div>
+            </ng-template>
+        </div>
+
+        <div style="float: right;">
+            <div class="ir" *ngIf="index === (demo.length - 1); else elseNext"><i class="fas fa-chevron-right is"></i>
+            </div>
+            <ng-template #elseNext>
+                <div class="ir" (click)="changeSlid(1)"><i class="fas fa-chevron-right is"></i></div>
+            </ng-template>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: -18%;">
+        <div class="col-4"> <img src="././assets/images/Smile/Level-3-Happy face.webp" class="hide img-fluid" id="happy"
+                alt="" srcset=""></div>
+
+        <div class="col-4" *ngIf="dataLoad === false"> <img src="{{imgurl}}"
+                class="img img-fluid rounded mx-auto d-block" alt=""></div>
+
+        <div class="col-4" *ngIf="dataLoad === true">
+            <div class="d-flex justify-content-center text-light loader">
+                <div class="spinner-border" role="status">
+                </div>
+                <b> &nbsp; &nbsp; Loding data...</b>
+            </div>
+        </div>
+
+        <div class="col-4"><img src="././assets/images/Smile/Level-3-Sad face.webp" class="hide img-fluid" id="sed"
+                alt="" srcset=""></div>
+    </div>
+
+    <div style="margin-top: 10%;">
+
+        <div class="jscon">
+            <div class="optios mr-1" (click)="optioSelect(0)"
+                style="background-image: url(././assets/images/MCQ_Buttons/MCQ\ button-A.webp);">
+                <span class="spell">{{spellings[0]}}</span>
+            </div>
+
+            <div class="optios ml-1" (click)="optioSelect(1)"
+                style="background-image: url(././assets/images/MCQ_Buttons/MCQ\ button-B.webp);">
+                <span class="spell">{{spellings[1]}}</span>
+            </div>
+        </div>
+
+
+        <div class="jscon">
+            <div class="optios mr-1" (click)="optioSelect(2)"
+                style="background-image: url(././assets/images/MCQ_Buttons/MCQ\ button-C.webp);">
+                <span class="spell">{{spellings[2]}}</span>
+            </div>
+
+            <div class="optios ml-1" (click)="optioSelect(3)"
+                style="background-image: url(././assets/images/MCQ_Buttons/MCQ\ button-D.webp);">
+                <span class="spell">{{spellings[3]}}</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-1 back" (click)="goBack()">
+        <img src="././assets/images/Levels_and_Other_Buttons/BackButton.webp" height="60px" alt="" srcset="">
+    </div>
+
 
 </div>

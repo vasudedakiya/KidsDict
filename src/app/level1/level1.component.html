@@ -1,7 +1,7 @@
-<div class="bg">
+<div class="bg" (keyup)="onKey($event)">
 
 
-    <div class="jscon">
+    <div class="jscon" style="padding-top: 3%;">
         <div>&nbsp;</div>
         <div>
             <ul id="main">
@@ -21,7 +21,32 @@
         </div>
     </div>
 
-    <div class="row middiv" *ngIf="dataLoad === false">
+    <div class="jscon" style="margin-top: 3vh;" *ngIf="dataLoad === false">
+        <div class="">
+            <div class="" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left is" style="float: left;"></i>
+            </div>
+            <ng-template #elsePrev>
+                <div (click)="changeSlid(-1)"><i class="fas fa-chevron-left is" style="float: left;"></i>
+                </div>
+            </ng-template>
+        </div>
+
+        <div class="" style="display: flex; justify-content: center;">
+            <img src="{{imgurl}}" class="imgs" alt="">
+        </div>
+
+        <div class="">
+            <div class="" *ngIf="index === (demo.length - 1); else elseNext"> <i class="fas fa-chevron-right is"
+                    style="float: right;"></i></div>
+            <ng-template #elseNext>
+                <div class="" (click)="changeSlid(1)">
+                    <i class="fas fa-chevron-right is" style="float: right;"></i>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+    <!-- <div class="row middiv" *ngIf="dataLoad === false">
         <div class="col-xl-4">
             <div class="" *ngIf="index === 0; else elsePrev"></div>
             <ng-template #elsePrev>
@@ -42,7 +67,7 @@
                 </div>
             </ng-template>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="jscon ">

@@ -45,27 +45,33 @@ export class Level1Component implements OnInit {
 
     speechSynthesis.addEventListener("voiceschanged",
       () => {
-
         this.voices = speechSynthesis.getVoices();
         this.selectedVoice = (this.voices[4]);
-        console.log("load");
       }
-
-
     );
 
     this._api.getCatData(this.id).subscribe((res: any) => {
       for (let i = 0; i < res.data.length; i++) {
         var temp1 = res.data[i].name;
-
-
         var temp = { name: res.data[i].name, latter: temp1.split(''), url: "https://kidsdictionary.arjunbala.com/" + res.data[i].img }
         this.demo.push(temp);
-
-
       }
       this.dataSD();
       this.dataLoad = false;
+    });
+
+
+    window.addEventListener('keydown', (event: KeyboardEvent) => {
+      const keycode = event.keyCode || event.which;
+      let temp: string = String.fromCharCode(keycode);
+
+      if (keycode == 39 && this.index + 1 != this.demo.length) {
+        this.changeSlid(1);
+      }
+      if (keycode == 37 && this.index > 0) {
+        this.changeSlid(-1);
+      }
+
     });
 
   }
@@ -147,6 +153,10 @@ export class Level1Component implements OnInit {
 
     for (let i = 0; i < this.demo[this.index].latter.length; i++) {
       let id: NodeJS.Timeout;
+      var utterance = new SpeechSynthesisUtterance(text[i]);
+      utterance.voice = this.selectedVoice;
+      utterance.rate = rate;
+      speechSynthesis.speak(utterance);
       id = setTimeout(() => {
         this.count++;
         console.log(text[i]);
@@ -155,10 +165,6 @@ export class Level1Component implements OnInit {
       }, i * 1300);
       this.timeouts.push(id);
 
-      var utterance = new SpeechSynthesisUtterance(text[i]);
-      utterance.voice = this.selectedVoice;
-      utterance.rate = rate;
-      speechSynthesis.speak(utterance);
     }
 
 

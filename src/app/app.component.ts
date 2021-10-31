@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
         this.aboutUs = false;
       }
       this.wid = window.screen.width;
-      if (window.screen.width <= 1024) { // 768px portrait
+      if (window.screen.width <= 860) { // 768px portrait
         this.mobile = true;
       }
       else {
