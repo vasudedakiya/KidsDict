@@ -50,6 +50,7 @@ export class Level1Component implements OnInit {
       }
     );
 
+
     this._api.getCatData(this.id).subscribe((res: any) => {
       for (let i = 0; i < res.data.length; i++) {
         var temp1 = res.data[i].name;
@@ -73,6 +74,10 @@ export class Level1Component implements OnInit {
       }
 
     });
+
+  }
+
+  onKey(event: any) {
 
   }
 

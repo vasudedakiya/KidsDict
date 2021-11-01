@@ -45,6 +45,10 @@ export class Level3Component implements OnInit {
     });
   }
 
+  onKey(event: any) {
+
+  }
+
   dataS() {
     this.spellings.push(this.demo[this.index].name);
     this.makeid(this.demo[this.index].name);
