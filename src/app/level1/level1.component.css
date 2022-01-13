@@ -12,19 +12,21 @@
 }
 
 .spell {
-    background-size: 85% 100%;
+    background-size: 47px 52px;
     background-repeat: no-repeat;
     align-items: center;
     margin: auto auto auto auto;
-    font-size: 2.7vw;
+    font-size: 42px;
+    padding-left: 2px;
     display: inline;
 }
 
 .txt {
     text-align: center;
     padding-left: 10px;
-    padding-right: 20px;
+    padding-right: 10px;
     font-family: monospace;
+    margin-right: 20px;
     font-weight: bold;
     color: white;
     text-transform: uppercase;
@@ -43,6 +45,11 @@ ul#main li {
     font-size: 10vw;
 }
 
+.icondis {
+    color: rgba(218, 139, 67, .6);
+    font-size: 10vw;
+}
+
 .imgs {
     width: 40vh;
 }
@@ -51,15 +58,19 @@ ul#main li {
     0% {
         opacity: 1;
     }
+
     25% {
         opacity: .5
     }
+
     50% {
         opacity: 1;
     }
+
     75% {
         opacity: .5;
     }
+
     100% {
         opacity: 1;
     }

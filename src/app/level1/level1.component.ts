@@ -88,6 +88,7 @@ export class Level1Component implements OnInit {
 
   // ============================display data methods=====================
   goBack() {
+    this.stop();
     this._route.navigate(['level', 1])
   }
 
@@ -148,6 +149,7 @@ export class Level1Component implements OnInit {
     if (speechSynthesis.speaking) {
       speechSynthesis.cancel();
     }
+
   }
 
   synthesizeSpeechFromText(voice: SpeechSynthesisVoice, rate: number, text: string[], word: string) {

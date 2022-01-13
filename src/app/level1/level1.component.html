@@ -23,7 +23,8 @@
 
     <div class="jscon" style="margin-top: 3vh;" *ngIf="dataLoad === false">
         <div class="">
-            <div class="" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left is" style="float: left;"></i>
+            <div class="" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left icondis"
+                    style="float: left;"></i>
             </div>
             <ng-template #elsePrev>
                 <div (click)="changeSlid(-1)"><i class="fas fa-chevron-left is" style="float: left;"></i>
@@ -36,7 +37,7 @@
         </div>
 
         <div class="">
-            <div class="" *ngIf="index === (demo.length - 1); else elseNext"> <i class="fas fa-chevron-right is"
+            <div class="" *ngIf="index === (demo.length - 1); else elseNext"> <i class="fas fa-chevron-right icondis"
                     style="float: right;"></i></div>
             <ng-template #elseNext>
                 <div class="" (click)="changeSlid(1)">

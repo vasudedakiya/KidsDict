@@ -6,13 +6,15 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
   constructor(private _router: Router) { }
 
-  playSoud = true;
-  wid: number = 0
-  mobile = false
+  playSoud = false;
+  wid: number = 0;
+  mobile = false;
+  load = false;
   ngOnInit(): void {
     this.playSoud = true;
 
@@ -20,13 +22,17 @@ export class HomeComponent implements OnInit {
       this.wid = window.screen.width;
       if (window.screen.width <= 860) { // 768px portrait
         this.mobile = true;
+        this.playSoud = false;
       }
       else {
         this.playSoud = true;
         this.mobile = false;
       }
     }, 1000)
-
+    this.load = true;
+  }
+  ngAfterViewChecked() {
+    this.playSoud = true;
   }
 
   goto(level: any) {

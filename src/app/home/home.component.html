@@ -1,18 +1,18 @@
 <div *ngIf="mobile===false">
 
-    <audio autoplay loop *ngIf="playSoud === true">
-        <source src="././assets/sound/Sound effect/dashboard_sound.ogg" type="audio/ogg">
-    </audio>
     <div class="bg">
+        <audio autoplay loop *ngIf="playSoud === true">
+            <source src="././assets/sound/Sound effect/dashboard_sound.ogg" type="audio/ogg">
+        </audio>
 
         <div>
+
             <a (click)="aboutUs()">
                 <img src="././assets/images/Screen_Background/DeveloperButtonmin.webp" class="devloperImg">
             </a>
         </div>
 
         <div class="levels">
-
             <img src="././assets/images/Levels_and_Other_Buttons/Engine.webp" class="anima" height="" alt="">
             <a (click)="goto(1)">
                 <img src="././assets/images/Levels_and_Other_Buttons/Level-1.webp" class="anima" height="" alt="">
@@ -31,6 +31,10 @@
 
         <br>
     </div>
+
+    <!-- <audio autoplay loop #audioOption id="sound">
+        <source src="././assets/sound/Sound effect/" type="audio/ogg">
+    </audio> -->
 
 </div>
 

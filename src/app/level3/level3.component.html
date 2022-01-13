@@ -174,17 +174,18 @@
 
     <div style="padding-top: 20%;">
         <div style="float: left;">
-            <div class="il" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left is"></i></div>
+            <div class="il" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left icondis"></i></div>
             <ng-template #elsePrev>
-                <div class="il" (click)="changeSlid(-1)"><i class="fas fa-chevron-left is"></i></div>
+                <div class="il" (click)="changeSlid(-1)"><i class="fas fa-chevron-left iconable"></i></div>
             </ng-template>
         </div>
 
         <div style="float: right;">
-            <div class="ir" *ngIf="index === (demo.length - 1); else elseNext"><i class="fas fa-chevron-right is"></i>
+            <div class="ir" *ngIf="index === (demo.length - 1); else elseNext"><i
+                    class="fas fa-chevron-right icondis"></i>
             </div>
             <ng-template #elseNext>
-                <div class="ir" (click)="changeSlid(1)"><i class="fas fa-chevron-right is"></i></div>
+                <div class="ir" (click)="changeSlid(1)"><i class="fas fa-chevron-right iconable"></i></div>
             </ng-template>
         </div>
     </div>

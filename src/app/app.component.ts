@@ -33,6 +33,9 @@ export class AppComponent implements OnInit {
         this.mobile = false;
       }
     }, 1000)
+
+
   }
   title = 'KidsDict';
 }
+

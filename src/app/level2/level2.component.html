@@ -43,7 +43,7 @@
         <div class="row" style="justify-content: space-between;">
 
                 <div class="col-md-1">
-                        <div class="il" *ngIf="index === 0; else elsePrev">
+                        <div class="il" *ngIf="index === 0; else elsePrev"><i class="fas fa-chevron-left icondis"></i>
                         </div>
                         <ng-template #elsePrev>
                                 <div class="il" (click)="changeSlid(-1)"><i class="fas fa-chevron-left is"></i>
@@ -75,7 +75,8 @@
 
 
                 <div class="col-md-1">
-                        <div class="ir" *ngIf="index === (demo.length - 1); else elseNext">
+                        <div class="ir" *ngIf="index === (demo.length - 1); else elseNext"><i
+                                        class="fas fa-chevron-right icondis"></i>
                         </div>
                         <ng-template #elseNext>
                                 <div class="ir" (click)="changeSlid(1)"><i class="fas fa-chevron-right is"></i></div>

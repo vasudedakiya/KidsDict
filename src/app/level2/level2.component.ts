@@ -48,6 +48,9 @@ export class Level2Component implements OnInit {
       if (keycode >= 65 && keycode <= 90) {
         this.appendLatter(temp.toLowerCase());
       }
+      if (keycode === 8) {
+        this.appendLatter("Backspace")
+      }
     });
 
 
@@ -145,6 +148,9 @@ export class Level2Component implements OnInit {
     audioWrong.src = "././assets/sound/Sound effect/sound_keyboard_wrong.ogg";
     audioWrong.load();
 
+    let a = this.demo[this.index].latter.length;
+    let b = this.demo[this.index].latter[this.count1].toLocaleLowerCase();
+
     if (lat === 'Backspace' && this.count1 !== 0) {
       let j = 0;
       if (this.count1 < 8) {
@@ -154,12 +160,12 @@ export class Level2Component implements OnInit {
         j = this.count1 - 8
       }
       let temp1 = {
-        url: "././assets/images/Spelling_Button/SpelingButton" + (j + 1) + ".webp",
-        latter: this.demo[this.index].latter[this.count1]
+        url: "././assets/images/Spelling_Button/SpelingButton" + (j) + ".webp",
+        latter: this.demo[this.index].latter[this.count1 - 1]
       }
 
       this.data[this.count1 - 1] = temp1
-      let temp = { url: "", latter: '\xa0' }
+      let temp = { url: "", latter: '\xa0\xa0' }
 
       this.ansData[this.count1 - 1] = temp;
       this.count1 -= 1
@@ -173,8 +179,9 @@ export class Level2Component implements OnInit {
 
 
 
-    else if (this.count1 < this.demo[this.index].latter.length && lat === this.demo[this.index].latter[this.count1].toLocaleLowerCase()) {
+    else if (this.count1 < a && lat === b) {
 
+      let c = this.demo[this.index].latter.length
 
       let j = 0;
       if (this.count1 < 8) {
@@ -191,14 +198,14 @@ export class Level2Component implements OnInit {
 
       let temp = { url: "", latter: '\xa0\xa0' }
       this.data[this.count1] = temp;
-      if (this.count1 + 1 < this.demo[this.index].latter.length) {
+      if (this.count1 + 1 < c) {
         // let audio = new Audio();
         // audio.src = "././assets/sound/Sound effect/sound_keyboard_right.ogg";
         // audioRight.load();
         audioRight.play();
       }
       this.count1 += 1
-      if (this.count1 == this.demo[this.index].latter.length) {
+      if (this.count1 == c) {
         // let audio = new Audio();
         // audio.src = "././assets/sound/Sound effect/yuppie.ogg";
         // audio.load();

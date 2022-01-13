@@ -123,7 +123,15 @@ export class Level3Component implements OnInit {
       for (var j = 0; j < str.length; j++) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
       }
-      this.spellings.push(result)
+      if (str === result) {
+        i = i - 1;
+      }
+      else {
+        this.spellings.push(result)
+        this.spellings.filter
+
+        
+      }
     }
     this.spellings = this.spellings.sort(this.rendome)
   }

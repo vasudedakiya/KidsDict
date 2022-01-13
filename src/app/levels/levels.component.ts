@@ -26,6 +26,19 @@ export class LevelsComponent implements OnInit {
       this.dataLoad = false;
     })
 
+    window.addEventListener('keydown', (event: KeyboardEvent) => {
+      const keycode = event.keyCode || event.which;
+      let temp: string = String.fromCharCode(keycode);
+
+      if (keycode == 39) {
+        this.scrollRight();
+      }
+      if (keycode == 37) {
+        this.scrollLeft();
+      }
+
+    });
+
   }
 
   goCate(cat: any) {
