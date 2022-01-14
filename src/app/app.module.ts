@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { MobileComponent } from './mobile/mobile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     Level3Component,
     Level4Component,
     AboutUsComponent,
-    FooterComponent
+    FooterComponent,
+    MobileComponent
   ],
   imports: [
     BrowserModule,

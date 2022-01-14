@@ -22,7 +22,7 @@ export class Level1Component implements OnInit {
   timeouts: NodeJS.Timeout[] = [];
 
 
-  constructor(private _route: Router, private _activeRoute: ActivatedRoute, private _api: ApiKidsDictService) {
+  constructor(private _router: Router, private _activeRoute: ActivatedRoute, private _api: ApiKidsDictService) {
     this.voices = [];
     this.selectedVoice = null;
     this.selectedRate = .75;
@@ -36,12 +36,21 @@ export class Level1Component implements OnInit {
   index: number = 0;
   imgurl: string = ""
   data: { url: string, latter: string }[] = []
+  wid: number = 0;
 
 
   ngOnInit(): void {
     this.id = this._activeRoute.snapshot.params.id;
     // var message = alert("Warning");
     // document.getElementById('SoundButton')?.click();
+    setInterval(() => {
+      this.wid = window.screen.width;
+      if (window.screen.width <= 860) { // 768px portrait
+        this._router.navigate(['mobile'])
+      }
+      else {
+      }
+    }, 1000)
 
     speechSynthesis.addEventListener("voiceschanged",
       () => {
@@ -89,7 +98,7 @@ export class Level1Component implements OnInit {
   // ============================display data methods=====================
   goBack() {
     this.stop();
-    this._route.navigate(['level', 1])
+    this._router.navigate(['level', 1])
   }
 
 

@@ -21,9 +21,20 @@ export class Level4Component implements OnInit {
   count1: number = 0;
   id: number = 0;
   dataLoad = true;
+  wid: number = 0;
 
   ngOnInit(): void {
     this.id = this._activeRoute.snapshot.params.id;
+
+
+    setInterval(() => {
+      this.wid = window.screen.width;
+      if (window.screen.width <= 860) { // 768px portrait
+        this._route.navigate(['mobile'])
+      }
+      else {
+      }
+    }, 1000)
 
     this._api.getCatData(this.id).subscribe((res: any) => {
       for (let i = 0; i < res.data.length; i++) {

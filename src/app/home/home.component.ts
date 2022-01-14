@@ -13,20 +13,18 @@ export class HomeComponent implements OnInit {
 
   playSoud = false;
   wid: number = 0;
-  mobile = false;
   load = false;
   ngOnInit(): void {
     this.playSoud = true;
 
     setInterval(() => {
       this.wid = window.screen.width;
+
       if (window.screen.width <= 860) { // 768px portrait
-        this.mobile = true;
-        this.playSoud = false;
+        this._router.navigate(['mobile'])
       }
       else {
         this.playSoud = true;
-        this.mobile = false;
       }
     }, 1000)
     this.load = true;

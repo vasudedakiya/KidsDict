@@ -13,11 +13,22 @@ export class LevelsComponent implements OnInit {
   id: number = 0;
   categorys: any;
   dataLoad = true;
+  wid: number = 0;
+
   constructor(private _router: Router, private _activeRoute: ActivatedRoute, private _api: ApiKidsDictService) { }
 
   ngOnInit(): void {
     this.playSoud = true;
-    this.id = this._activeRoute.snapshot.params.id
+    this.id = this._activeRoute.snapshot.params.id;
+
+    setInterval(() => {
+      this.wid = window.screen.width;
+      if (window.screen.width <= 860) { // 768px portrait
+        this._router.navigate(['mobile'])
+      }
+      else {
+      }
+    }, 1000)
 
     this._api.getCategoryList().subscribe((res: any) => {
       console.log(res);

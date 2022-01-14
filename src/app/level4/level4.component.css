@@ -2,7 +2,7 @@
     background-image: url(../../assets/images/Screen_Background/Level-2-background.webp);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    min-height: 70vh !important;
+    min-height: 70% !important;
 }
 
 .back {

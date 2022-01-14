@@ -12,10 +12,12 @@
 }
 
 .spell {
+    /* background-size: 3.5vw 3.5vw; */
     background-size: 47px 52px;
     background-repeat: no-repeat;
     align-items: center;
     margin: auto auto auto auto;
+    /* font-size: 3vw; */
     font-size: 42px;
     padding-left: 2px;
     display: inline;
